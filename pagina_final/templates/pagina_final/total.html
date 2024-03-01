@@ -1,0 +1,21 @@
+{% extends "global/Base.html" %}
+
+{{ block title }}
+    Estos son sus pagos finales
+{{ endblock }}
+{{ block content }}
+
+   	<div class="div_pago">
+        
+  En la primera etapa (individual) usted ganó {{tokens_total_ind}} tokens.
+        <br>
+  En la segunda etapa (grupo) usted ganó {{tokens_total_grupo}} tokens.
+        <br>
+  En la tercera etapa (firmas) usted ganó {{tokens_total_firma}} tokens.
+        <br>
+
+   	</div>
+
+ En total usted <b>obtuvo {{tokens_totales}} tokens. </b>
+
+{{ endblock }}

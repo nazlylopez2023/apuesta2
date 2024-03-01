@@ -1,0 +1,83 @@
+{% extends "otree/Page.html" %}
+{% load otree static %}
+
+{% block global_styles  %}
+<link href="{% static 'global/empty.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block global_scripts  %}
+<script>
+
+    	var hv_selected = 0;
+	    var tokens_selected = 0;
+
+    function selectworker(div_tabWorker) {
+        let id_div = div_tabWorker.id;
+        if(id_div == "div_tabWorker_1") {
+            document.getElementById("div_tabWorker_1").classList.add("div_tabWorker-selected");
+            document.getElementById("div_tabWorker_2").classList.remove("div_tabWorker-selected");
+            document.getElementById("rad_candidato_1").checked = true;
+        }
+
+        else {
+           document.getElementById("div_tabWorker_2").classList.add("div_tabWorker-selected");
+           document.getElementById("div_tabWorker_1").classList.remove("div_tabWorker-selected");
+           document.getElementById("rad_candidato_2").checked = true;
+        }
+        // Para que aparezca el botón de siguiente
+		hv_selected = 1;
+		if((hv_selected + tokens_selected) == 2) {
+			document.getElementById("div_btnNext").style.display = "block";
+			}
+    }
+
+    function nextView() {
+        btn_next = document.getElementById("id_next");
+        btn_next.removeAttribute("disabled");
+        btn_next.click();
+    }
+
+    $(document).ready(function (){
+        $(".slider_tokens").change(
+            function (event) {
+                let text_tokens = document.getElementById("n_tokens");
+                let val_slider = document.getElementById(event.target.id).value;
+                text_tokens.innerHTML=val_slider;
+            }
+            )
+    });
+
+    function review_input(event) {
+		// Deshabilitamos los mensajes de error previos
+		document.getElementById("error_min").style.display = "none";
+		document.getElementById("error_max").style.display = "none";
+		document.getElementById("in_tokens").classList.remove("in_tokens-error");
+		// Obtener el valor del input
+		let in_value = event.target.value;
+		// Vaidar que ingrese un número
+		if(!/^\d*$/.test(in_value)) {
+			// Si no ingresa un número se retrocede en un caracter el valor ingresado
+        	event.target.value = in_value.slice(0, -1);
+        } else {
+        	// Si sí ingresó un número ahora validamos que esté entre 0 y 100
+        	if(in_value > 100) {
+        		event.target.value = 100;
+        		document.getElementById("error_max").style.display = "block";
+        		document.getElementById("in_tokens").classList.add("in_tokens-error");
+        	} else if (in_value < 0) {
+        		event.target.value = 0;
+        		document.getElementById("error_min").style.display = "block";
+        		document.getElementById("in_tokens").classList.add("in_tokens-error");
+        	}
+        }
+        // Para que aparezca el botón de siguiente
+		tokens_selected = 1;
+		if((hv_selected + tokens_selected) == 2) {
+			document.getElementById("div_btnNext").style.display = "block";
+		}
+	}
+
+
+
+</script>
+{% endblock %}

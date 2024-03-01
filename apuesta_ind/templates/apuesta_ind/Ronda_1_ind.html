@@ -1,0 +1,191 @@
+{% extends "global/Page.html" %}
+
+{% block title %}
+    <div class="div_text">
+  Ronda 1
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="div_text">
+  {{ text }}
+</div>
+
+
+<div class="div_tabWorkers">
+        <div class="div_tabWorker" id="div_tabWorker_1" onclick="selectworker(this)">
+            <table class="tabWorker">
+               <tr>
+                  <td class="td_info" style="width:40%;">
+                      <b>Número de documento</b>
+                  </td>
+                  <td class="td_info">
+                      {{ worker_1.num_doc }}
+                  </td>
+               </tr>
+
+                <tr>
+                  <td class="td_info">
+                      <b>Tipo de documento</b>
+                  </td>
+                  <td class="td_info">
+                      {{ worker_1.tipo_doc }}
+                  </td>
+               </tr>
+
+
+                <tr>
+                  <td class="td_info">
+                      <b>Género</b>
+                  </td>
+                  <td class="td_info">
+                      {{ worker_1.gen }}
+                  </td>
+               </tr>
+
+                <tr>
+                  <td class="td_info">
+                      <b>Edad</b>
+                  </td>
+                  <td class="td_info">
+                      {{ worker_1.age }}
+                  </td>
+               </tr>
+
+                <tr>
+                  <td class="td_info">
+                      <b>Experiencia laboral</b>
+                  </td>
+                  <td class="td_info">
+                      <ul>
+                      {% for opcion in worker_1.las_exp %}
+                            <li>{{ opcion }}</li>
+                      {% endfor %}
+                      </ul>
+                  </td>
+               </tr>
+
+                <tr>
+                  <td class="td_info">
+                      <b>Nivel educativo</b>
+                  </td>
+                  <td class="td_info">
+                      {{ worker_1.lvl_edu }}
+                  </td>
+               </tr>
+            </table>
+            <div class="div_radButton">
+            <input type="radio" value="{{ worker_1.type }}" id="rad_candidato_1" name="selected_round_{{ round }}">
+            <label for="rad_candidato_1">Candidato 1</label>
+            </div>
+    </div>
+
+        <div class="div_tabWorker" id="div_tabWorker_2" onclick="selectworker(this)">
+            <table class="tabWorker">
+               <tr>
+                  <td class="td_info" style="width:40%;">
+                      <b>Número de documento:</b>
+                  </td>
+                  <td class="td_info">
+                      {{ worker_2.num_doc }}
+                  </td>
+               </tr>
+
+                <tr>
+                  <td class="td_info">
+                      <b>Tipo de documento</b>
+                  </td>
+                  <td class="td_info">
+                      {{ worker_2.tipo_doc }}
+                  </td>
+               </tr>
+
+
+                <tr>
+                  <td class="td_info">
+                      <b>Género</b>
+                  </td>
+                  <td class="td_info">
+                      {{ worker_2.gen }}
+                  </td>
+               </tr>
+
+                <tr>
+                  <td class="td_info">
+                      <b>Edad</b>
+                  </td>
+                  <td class="td_info">
+                      {{ worker_2.age }}
+                  </td>
+               </tr>
+
+                <tr>
+                  <td class="td_info">
+                      <b>Experiencia laboral</b>
+                  </td>
+                  <td class="td_info">
+                      <ul>
+                      {% for opcion in worker_2.las_exp %}
+                            <li>{{ opcion }}</li>
+                      {% endfor %}
+                      </ul>
+                  </td>
+               </tr>
+
+                <tr>
+                  <td class="td_info">
+                      <b>Nivel educativo</b>
+                  </td>
+                  <td class="td_info">
+                      {{ worker_2.lvl_edu }}
+                  </td>
+               </tr>
+            </table>
+            <div class="div_radButton">
+            <input type="radio" value="{{ worker_2.type }}" id="rad_candidato_2" name="selected_round_{{ round }}" required>
+
+            <label for="rad_candidato_2">Candidato 2
+            </label>
+            </div>
+    </div>
+
+</div>
+
+
+<div class="div_slider">
+De los 100 tokens que tiene a su disposición ¿Cuántos apostaría por el candiato escogido?
+ <br>
+ <!--   Esto es para armar un slider
+    <b id="n_tokens">--</b><b>tokens</b>
+ <br>
+  <input type="range" min="0" max="100" step="1" id="slider_tokens" class="slider_tokens"  name="tokens_round_{{round}}"required>
+-->
+    <table class="tab_tokens">
+        <tr>
+            <td>
+                <input type="text" class="in_tokens" id="in_tokens" name="tokens_round_{{round}}" oninput="review_input(event)" required>
+            </td>
+            <td>
+                Tokens
+            </td>
+        </tr>
+
+    </table>
+    <div class="msg_error">
+        <div style="display: none;" id="error_min">
+            El valor mínimo de los tokens es de 0
+        </div>
+
+        <div style="display: none;" id="error_max">
+            El valor máximo de los tokens es de 100
+        </div>
+    </div>
+</div>
+
+<div class="div_btnNext" id="div_btnNext" style="display: none;">
+    <input type="button" id="btnNext" class="btnNext" value="Siguiente" onclick="nextView()">
+    <button class="otree-btn-next btn btn-primary" style="display: none;" id="id_next" disabled>Siguiente</button>
+
+</div>
+
+{% endblock %}
