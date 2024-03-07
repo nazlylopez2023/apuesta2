@@ -18,9 +18,10 @@ class Group(BaseGroup):
     pass
 
 class Player(BasePlayer):
+    tokens_encription = models.IntegerField()
     tokens_total_ind = models.IntegerField()
     tokens_total_grupo = models.IntegerField()
     tokens_total_firma = models.IntegerField()
     tokens_totales = models.IntegerField()
-
+    pago_monetario =  models.IntegerField()
 

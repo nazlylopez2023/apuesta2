@@ -1,0 +1,48 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block styles %}
+<style type="text/css">
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+</style>
+{% endblock %}
+
+{{ block title }}
+    <p>Bienvenido al laboratorio experimental de la Universidad del Rosario</p>
+    <p>Instrucciones generales</p>
+{{ endblock }}
+{{ block content }}
+    <p>Usted está a punto de participar en una actividad de toma de decisiones, y es crucial que siga las siguientes instrucciones:  </p>
+    <p> Este ejercicio es individual, a partir de este momento está prohibido comunicarse con otros participantes. Realice su tarea en silencio, todas sus decisiones son personales. Entre más concentrado se encuentre su desempeño será mejor y podrá aumentar sus ganancias. Si tiene alguna duda durante el ejercicio, levante la mano para que la resuelva en privado con uno de los integrantes del equipo de investigación. Por favor, no realice preguntas en voz alta.  </p>
+
+<p>
+    Esta actividad consta de dos partes, cada una con una duración aproximada de 10 a 15 minutos (en el caso de los intermediadores: la primera con una duración de 10 minutos aproximadamente y la segunda con una duración de máximo 30 minutos). Antes de cada etapa aparecerá una página de instrucciones donde se explica la tarea que está por realizar, por favor, léalas detenidamente. Durante la actividad, utilizaremos tokens (Unidades Monetarias Experimentales – UMEs), en donde 1 token (UME) equivale a $1.000 pesos colombianos. Tenga presente que retirarse del ejercicio implica renunciar al pago que haya obtenido hasta el momento. Solo aquellos que completen todas las etapas recibirán el subsidio de transporte y las ganancias acumuladas. 
+</p>
+
+<p> La primera parte de la actividad consta de un ejercicio de velocidad de procesamiento, allí codificará grupos de palabras en un tiempo determinado. El objetivo es que procure codificar el mayor número de palabras en tres (3) minutos. Por llegar hasta el final de esta tarea, usted obtiene 30 tokens (UMEs) (20 en el caso de los intermediadores). </p>
+    <p>La segunda parte se divide en tres etapas en donde debe tomar decisiones. Cada etapa consta de ocho (8) rondas. En cada ronda se verá enfrentado a un par de hojas de vida de candidatos a ocupar un puesto de trabajo definido. Usted apostará una cantidad de tokens (UMEs), que tendrá disponibles en cada ronda al candidato que considere, bajo ciertos criterios que serán específicamente indicados antes de cada una de las tres etapas. Si bajo esos criterios su elección coincide con el ganador de cada ronda, usted ganará los tokens apostados, caso contrario, los perderá. Al finalizar cada una de las tres etapas, el computador escogerá al azar el resultado de cuatro (4) de las ocho (8) rondas para calcular sus ganancias, incluyendo las pérdidas. Es decir, le serán pagas doce (12) de veinticuatro (24) rondas.  </p>
+    <p> Al finalizar las dos partes de esta actividad, Al final de la actividad deberá diligenciar y firmar correctamente una cuenta de cobro que uno de los investigadores le entregará y que debe devolver al equipo antes de su salida del laboratorio. El subsidio de transporte será pagado al final del ejercicio y antes de salir del laboratorio.  </p>
+
+    <p>La cuenta debe estar a su nombre y cédula; de lo contrario, el pago será rechazado. Las ganancias se depositarán en su cuenta en menos de 72 horas. Debe entregar un recibo de pago firmado con sus ganancias obtenidas al equipo de investigación antes de salir del laboratorio. </p>
+
+    <p> Antes de iniciar esta actividad, lea detenidamente el consentimiento informado y decida si acepta continuar. Si no acepta, avise al equipo levantando la mano y podrá salir de la sala. Agradecemos su participación. El equipo de investigación estará disponible para responder sus preguntas. </p>
+
+ <p> Presione el botón "Siguiente" para leer el consentimiento informado</p>
+    <em>{{ formfields }}</em>
+
+<div class="row">
+    <div class="col">
+        <div class="text-end">
+            <button class="otree-btn-next btn-lg btn-primary">Siguiente</button>
+        </div>
+    </div>
+</div>
+
+{{ endblock }}

@@ -1,0 +1,33 @@
+{{ block title }}
+    Segunda parte de la actividad
+<br>
+    Etapa 1 - Elección individual
+{{ endblock }}
+{{ block content }}
+<p> ¡Bienvenido a la primera etapa de esta segunda parte! </p>
+    <p>Un tiempo antes de esta actividad, fueron realizadas sesiones en este mismo laboratorio con aproximadamente 80 hombres, entre los 21 y 45 años de edad. En esas sesiones, los participantes realizaron tareas de memoria de trabajo y velocidad de procesamiento, como la que usted acaba de realizar. En los estudios sobre desempeño laboral, se ha demostrado que estas tareas pueden tomarse como predictoras de productividad. Así, los participantes de esas sesiones que obtuvieron un mejor desempeño en las tareas son quienes en la práctica se prevé son más productivos laboralmente.   </p>
+    <p>Posteriormente, dependiendo de los resultados que cada uno de ellos obtuvo en los ejercicios, fueron asignados en un ranking de la siguiente manera: quienes obtuvieron mayor puntaje es porque tuvieron un mejor desempeño en la ejecución de las tareas y ocuparon los primeros lugares en el ranking. Luego, los de peor desempeño obtuvieron menores puntajes y quedaron ubicados en los últimos lugares de ese mismo ranking.  Al finalizar las tareas, los participantes diligenciaron un formato de hoja de vida con su experiencia laboral y académica. </p>
+    <p>En esta etapa, usted tomará el rol de un reclutador laboral. Su tarea será recomendar a uno de los dos candidatos a un puesto de trabajo para una empresa. Para ello usted tiene la siguiente información:  </p>
+    <p> <b>1)</b> Se encuentra familiarizado con el nivel de exigencia de la tarea de codificación de palabras, que la tratamos como predictora de la productividad laboral de los candidatos. </p>
+    <p> <b>1)</b>  La hoja de vida de cada candidato. </p>
+    <p> Basándose en ello, usted deberá predecir el candidato de la dupla que obtuvo una mejor posición en el ranking de la tarea de codificación y, por tanto, recomendará su hoja de vida para el puesto de trabajo al que se postula.  </p>
+    <p> Esta tarea la deberá hacer en ocho (8) rondas. En cada ronda aparecerá una dupla de hojas de vida de candidatos a un puesto de trabajo, es decir, usted al final habrá escogido ocho (8) candidatos, uno en cada ronda.   </p>
+    <p> Al inicio de cada ronda usted contará con 100 tokens y apostará la cantidad que desee al la hoja de vida del candidato que crea está mejor posicionado en el ranking de desempeño. Si el candidato que usted eligió entre la dupla de cada ronda es el que mejor está posicionado, usted gana los tokens que apostó. Si elige el peor posicionado, perderá los tokens apostados. Las pérdidas y las ganancias de cada ronda se irán acumulando hasta terminar las ocho (8) rondas, pero usted siempre contará con 100 tokens al inicio de cada ronda para apostar.  </p>
+    <p> Usted podrá seleccionar al candidato haciendo click con el mouse u oprimiendo con su dedo en la pantalla encima de la hoja de vida; luego usará el teclado para definir en el cuadro vacío que encuentra abajo de las hojas de vida, la cantidad de tokens que le apuesta a ese candidato. Eligiendo el candidato y disponiendo la cantidad de tokens en el cuadro vacío, aparecerá un botón azul con la palabra “Siguiente”, para guardar la apuesta y pasar a la siguiente ronda. El botón no aparecerá si no selecciona uno de los candidatos o no dispone de una cantidad de tokens para apostar. Tenga en cuenta que no podrá elegir a ambos candidatos de una misma ronda.  </p>
+    <p> Las rondas aparecerán en su pantalla de manera aleatoria, es decir, puede aparecer primero la ronda  #4, luego la #1, luego la #3 y así sucesivamente hasta completar todas las ocho (8) rondas.  </p>
+    <p> Al finalizar la elección en todas las rondas, el computador escogerá aleatoriamente los resultados de cuatro (4) de ellas para calcular sus ganancias acumuladas, incluyendo las pérdidas.  </p>
+    <p> Si tiene dudas, levante la mano para que alguien del equipo se acerque a su escritorio y la resuelva antes de comenzar. Evite siempre hacer preguntas en voz alta.   </p>
+    <p> Por favor, dé click en "Siguiente". </p>
+
+
+    <em>{{ formfields }}</em>
+
+<div class="row">
+    <div class="col">
+        <div class="text-end">
+            <button class="otree-btn-next btn-lg btn-primary">Siguiente</button>
+        </div>
+    </div>
+</div>
+
+{{ endblock }}

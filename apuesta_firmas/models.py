@@ -10,7 +10,7 @@ class C(BaseConstants):
     NAME_IN_URL = 'apuesta_firmas'
     PLAYERS_PER_GROUP = None
     NUM_ROUNDS = 1
-    n_rounds = 3
+    n_rounds = 8
     n_rounds_payoff = 4
 
     #Hojas de Vida = lista con diccionarios dentro
@@ -19,104 +19,251 @@ class C(BaseConstants):
     hvs = [
     # hoja de vida de la ronda # 0
         {
-            'A':{
-            'num_doc': '1A' ,
-            'tipo_doc': 'CC',
-            'gen': 'Masculino',
-            'age': '28',
-            'las_exp': ['Domiciliario - 1año',
-                        'Mesero - 3 meses',
-                        'Domiciliario - 6 meses'
-                        ],
-            'lvl_edu': 'Secundaria',
-            'type': 'A',
-        },
-
-            'B':{
-            'num_doc': '1B',
-            'tipo_doc': 'PEP',
-            'gen': 'Masculino',
-            'age': '30',
-            'las_exp': ['Mesero - 1año',
-                        'Domiciliario - 3 meses',
-                        'Mesero - 6 meses',
-                        ],
-
-            'lvl_edu': 'Secundaria',
-            'type': 'B',
-
+            'A': {
+                'tipo_doc': 'Cédula de Ciudadanía',
+                'num_doc': '80.772.995',
+                'lug_nac': 'Bogotá D.C.',
+                'age': '38',
+                'las_exp': ['Auxiliar de bodega - Entre 10 y 12 meses',
+                            'Auxiliar postal - Más de 12 meses',
+                            'Codificador - Más de 12 meses'
+                            ],
+                'lvl_edu': 'Técnico',
+                'type': 'A',
             },
-        'text': "De estos candidatos ¿A quién recomendaría para un puesto de <b>mesero</b>?",
-        'round': '1'
+
+            'B': {
+                'tipo_doc': 'Cédula de Ciudadanía',
+                'num_doc': '1.031.169.509',
+                'lug_nac': 'Bogotá D.C.',
+                'age': '26',
+                'las_exp': ['Mensajero motorizado - Entre 3 y 6 meses',
+                            'Analista de despachos - Entre 3 y 6 meses',
+                            'Asesor comercial - Entre 10 y 12 meses'
+                            ],
+                'lvl_edu': 'Técnico',
+                'type': 'B',
+            },
+            'text': "Entre el Candidato A y el Candidato B ¿A quién recomendaría para un puesto de <b>supervisor de despachos </b>?",
+            'round': '1'
         },
 
     # hoja de vida # 1
         {
             'A': {
-                'num_doc': '2A',
-                'tipo_doc': 'CC',
-                'gen': 'Masculino',
-                'age': '28',
-                'las_exp': ['Domiciliario - 1año',
-                            'Mesero - 3 meses',
-                            'Domiciliario - 6 meses'
+                'tipo_doc': 'Permiso Especial de Permanencia',
+                'num_doc': '14.931.329',
+                'lug_nac': 'Venezuela',
+                'age': '35',
+                'las_exp': ['Supernumerario de restaurante- Entre 10 y 12 meses',
+                            'Depositario de bodega - Más de 12 meses',
+                            'Domiciliario - Más de 12 meses'
                             ],
-                'lvl_edu': 'Secundaria',
+                'lvl_edu': 'Primaria',
                 'type': 'A',
             },
 
             'B': {
-                'num_doc': '2B',
-                'tipo_doc': 'PEP',
-                'gen': 'Masculino',
-                'age': '30',
-                'las_exp': ['Mesero - 1año',
-                            'Domiciliario - 3 meses',
-                            'Mesero - 6 meses',
+                'tipo_doc': 'Cédula de Ciudadanía',
+                'num_doc': '1.015.452.938',
+                'lug_nac': 'Bogotá D.C.',
+                'age': '28',
+                'las_exp': ['Domiciliario de restaurante - Entre 7 y 9 meses',
+                            'Auxiliar de bodega - Entre 3 y 6 meses',
+                            'Pintor de construcción - Entre 3 y 6 meses'
                             ],
-
-                'lvl_edu': 'Secundaria',
+                'lvl_edu': 'Primaria',
                 'type': 'B',
             },
-            'text': "De estos candidatos ¿A quién recomendaría para un puesta de mesero?",
+            'text': "Entre el Candidato A y el Candidato B ¿A quién recomendaría para un puesto de <b>asistente de inventario de bodega</b>?",
             'round': '2'
         },
     # hoja de vida # 2
         {
             'A': {
-                'num_doc': '3A',
-                'tipo_doc': 'CC',
-                'gen': 'Masculino',
-                'age': '28',
-                'las_exp': ['Domiciliario - 1año',
-                            'Mesero - 3 meses',
-                            'Domiciliario - 6 meses'
+                'tipo_doc': 'Permiso Especial de Permanencia',
+                'num_doc': '4.668.040',
+                'lug_nac': 'Venezuela',
+                'age': '33',
+                'las_exp': ['Vendedor de fruver - Entre 7 y 9 meses',
+                            'Vendedor de fruver - Entre 7 y 9 meses',
+                            'Vendedor de fruver - Entre 7 y 9 meses'
                             ],
                 'lvl_edu': 'Secundaria',
                 'type': 'A',
             },
 
             'B': {
-                'num_doc': '3B',
-                'tipo_doc': 'PEP',
-                'gen': 'Masculino',
-                'age': '30',
-                'las_exp': ['Mesero - 1año',
-                            'Domiciliario - 3 meses',
-                            'Mesero - 6 meses',
+                'tipo_doc': 'Permiso Especial de Permanencia',
+                'num_doc': '1.252.250',
+                'lug_nac': 'Villa de Cura (Venezuela)',
+                'age': '26',
+                'las_exp': ['Vendedor independiente - Más de 12 meses',
+                            'Vendedor de fruver - Más de 12 meses',
+                            'Vendedor de fruver - Más de 12 meses'
                             ],
-
                 'lvl_edu': 'Secundaria',
                 'type': 'B',
             },
-            'text': "De estos candidatos ¿A quién recomendaría para un puesto de <b>mesero</b>?",
+            'text': "Entre el Candidato A y el Candidato B ¿A quién recomendaría para un puesto de <b>supervisor de mini mercado</b>?",
             'round': '3'
         },
     # hoja de vida # 3
+
+        {
+            'A': {
+
+                'type': 'A',
+                'tipo_doc': 'Cédula de ciudadanía',
+                'num_doc': '1.022.965.450',
+                'lug_nac': 'Bogotá D.C.',
+                'age': '33',
+                'las_exp': ['Vigilante seguridad privada - Más de 12 meses',
+                            'Supervisor seguridad - Más de 12 meses',
+                            'Contratista de construcción - Más de 12 meses'
+                            ],
+                'lvl_edu': 'Secundaria',
+            },
+
+            'B': {
+                'tipo_doc': 'Cédula de Ciudadanía',
+                'num_doc': '1.143.362.956',
+                'lug_nac': 'El Bagre (Antioquia)',
+                'age': '30',
+                'las_exp': ['Operador de medios de seguridad - Más de 12 meses',
+                            'Contratista de construcción - Más de 12 meses',
+                            'Pintor de construcción - Entre 3 y 6 meses'
+                            ],
+                'lvl_edu': 'Secundaria',
+                'type': 'B',
+            },
+            'text': "Entre el Candidato A y el Candidato B ¿A quién recomendaría para un puesto de <b>maestro de obra</b>?",
+            'round': '4'
+        },
     # hoja de vida # 4
+
+        {
+            'A': {
+                'tipo_doc': 'Cédula de Ciudadanía',
+                'num_doc': '1.071.579.575',
+                'lug_nac': 'Carrapí (Cundinamarca)',
+                'age': '33',
+                'las_exp': ['Operario de corrugados - Más de 12 meses',
+                            'Operario máquina de inyección de suelas - Más de 12 meses',
+                            'Operario de perforación - Entre 10 y 12 meses'
+                            ],
+                'lvl_edu': 'Secundaria',
+                'type': 'A',
+            },
+
+            'B': {
+                'tipo_doc': 'Permiso de Protección Especial',
+                'num_doc': '5.112.719',
+                'lug_nac': 'San Felipe (Venezuela)',
+                'age': '33',
+                'las_exp': ['Operario de producción - Más de 12 meses',
+                            'Supervisor de producción - Más de 12 meses',
+                            'Ayudante en plaza de mercados - Entre 7 y 9 meses'
+                            ],
+                'lvl_edu': 'Secundaria',
+                'type': 'B',
+            },
+            'text': "Entre el Candidato A y el Candidato B ¿A quién recomendaría para un puesto de <b>supervisor de operaciones</b>?",
+            'round': '5'
+        },
     # hoja de vida # 5
+
+        {
+            'A': {
+                'tipo_doc': 'Cédula de Ciudadanía',
+                'num_doc': '1.071.579.575',
+                'lug_nac': 'Carrapí (Cundinamarca)',
+                'age': '33',
+                'las_exp': ['Operario de corrugados - Más de 12 meses',
+                            'Operario máquina de inyección de suelas - Más de 12 meses',
+                            'Operario de perforación - Entre 10 y 12 meses'
+                            ],
+                'lvl_edu': 'Secundaria',
+                'type': 'A',
+            },
+
+            'B': {
+                'tipo_doc': 'Permiso de Protección Especial',
+                'num_doc': '5.112.719',
+                'lug_nac': 'San Felipe (Venezuela)',
+                'age': '33',
+                'las_exp': ['Operario de producción - Más de 12 meses',
+                            'Supervisor de producción - Más de 12 meses',
+                            'Ayudante en plaza de mercados - Entre 7 y 9 meses'
+                            ],
+                'lvl_edu': 'Secundaria',
+                'type': 'B',
+            },
+            'text': "Entre el Candidato A y el Candidato B ¿A quién recomendaría para un puesto de <b>supervisor de operaciones</b>?",
+            'round': '6'
+        },
     # hoja de vida # 6
+
+        {
+            'A': {
+                'tipo_doc': 'Cédula de Ciudadanía',
+                'num_doc': '1.065.613.805',
+                'lug_nac': 'Valledupar (Cesar)',
+                'age': '33',
+                'las_exp': ['Vendedor restaurante de cadena - Más de 12 meses ',
+                            'Vigilante - Entre 7 y 9 meses',
+                            'Auxiliar de vendedor restaurante de cadena - Más de 12 meses'
+                            ],
+                'lvl_edu': 'Técnico',
+                'type': 'A',
+            },
+
+            'B': {
+                'tipo_doc': 'Permiso de Protección Especial',
+                'num_doc': '749.965',
+                'lug_nac': 'Valencia (Venezuela)',
+                'age': '32',
+                'las_exp': ['Auxiliar tienda de cadena - 3 meses',
+                            'Mesero - Más de 12 meses',
+                            'Cajero de Movistar Arena'
+                            ],
+                'lvl_edu': 'Técnico',
+                'type': 'B',
+            },
+            'text': "Entre el Candidato A y el Candidato B ¿A quién recomendaría para un puesto de <b>supervisor de tienda</b>?",
+            'round': '7'
+        },
     # hoja de vida # 7
+
+        {
+            'A': {
+                'tipo_doc': 'Cédula de Extranjería',
+                'num_doc': '21.030.623',
+                'lug_nac': 'Venezuela',
+                'age': '33',
+                'las_exp': ['Músico de agrupación - Más de 12 meses',
+                            'Domiciliario de restaurante - Entre 3 y 6 meses',
+                            'Músico de agrupación - Más de 12 meses'
+                            ],
+                'lvl_edu': 'Universitario',
+                'type': 'A',
+            },
+
+            'B': {
+                'tipo_doc': 'Cédula de ciudadanía',
+                'num_doc': '1.023.970.577',
+                'lug_nac': 'Bogotá D.C.',
+                'age': '24',
+                'las_exp': ['Profesor de música independiente - Más de 12 meses',
+                            'Profesor de música en instituto - Más de 12 meses',
+                            'Trombonista de agrupación - Más de 12 meses'
+                            ],
+                'lvl_edu': 'Universitario',
+                'type': 'B',
+            },
+            'text': "Entre el Candidato A y el Candidato B ¿A quién recomendaría para un puesto de <b>músico de agrupación para eventos</b>?",
+            'round': '8'
+        },
     ]
 
 
@@ -154,6 +301,11 @@ class Player(BasePlayer):
     winner_1 = models.StringField()
     winner_2 = models.StringField()
     winner_3 = models.StringField()
+    winner_4 = models.StringField()
+    winner_5 = models.StringField()
+    winner_6 = models.StringField()
+    winner_7 = models.StringField()
+    winner_8 = models.StringField()
 
 # Payoffs
     ## depende de la cantidad de rondas a pagar

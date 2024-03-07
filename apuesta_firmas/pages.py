@@ -19,15 +19,15 @@ class Instrucciones(Page):
     pass
 
 
-class Ronda_1_firm(Page):
+class Ronda_1_fir(Page):
     n_round=0
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
         self.player.winner_1 = 'A'
         lst_order = ['A', 'B']
-        random.shuffle(lst_order) #aleatorizar entre A y B
-        print(lst_order)
+        #random.shuffle(lst_order) #aleatorizar entre A y B
+        #print(lst_order)
 
         return {
             'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
@@ -36,15 +36,15 @@ class Ronda_1_firm(Page):
             'round': C.hvs[self.n_round]['round'],
         }
 
-class Ronda_2_firm(Page):
+class Ronda_2_fir(Page):
     n_round=1
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
-        self.player.winner_2 = 'B'
+        self.player.winner_2 = 'A'
         lst_order = ['A', 'B']
-        random.shuffle(lst_order) #aleatorizar entre A y B
-        print(lst_order)
+        #random.shuffle(lst_order) #aleatorizar entre A y B
+        #print(lst_order)
 
         return {
             'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
@@ -53,17 +53,31 @@ class Ronda_2_firm(Page):
             'round': C.hvs[self.n_round]['round'],
         }
 
-
-
-class Ronda_3_firm(Page):
+class Ronda_3_fir(Page):
     n_round=2
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
-        self.player.winner_3 = 'B'
+        self.player.winner_3 = 'A'
         lst_order = ['A', 'B']
-        random.shuffle(lst_order) #aleatorizar entre A y B
-        print(lst_order)
+        #random.shuffle(lst_order) #aleatorizar entre A y B
+        #print(lst_order)
+
+        return {
+            'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
+            'worker_2': C.hvs[self.n_round][lst_order[1]],
+            'text': C.hvs[self.n_round]['text'],
+            'round': C.hvs[self.n_round]['round'],
+        }
+class Ronda_4_fir(Page):
+    n_round=3
+    form_model = 'player'
+    form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
+    def vars_for_template(self):
+        self.player.winner_4 = 'B'
+        lst_order = ['A', 'B']
+        #random.shuffle(lst_order) #aleatorizar entre A y B
+        #print(lst_order)
 
         return {
             'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
@@ -72,10 +86,78 @@ class Ronda_3_firm(Page):
             'round': C.hvs[self.n_round]['round'],
         }
 
+class Ronda_5_fir(Page):
+    n_round=4
+    form_model = 'player'
+    form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
+    def vars_for_template(self):
+        self.player.winner_5 = 'B'
+        lst_order = ['A', 'B']
+        #random.shuffle(lst_order) #aleatorizar entre A y B
+        #print(lst_order)
+
+        return {
+            'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
+            'worker_2': C.hvs[self.n_round][lst_order[1]],
+            'text': C.hvs[self.n_round]['text'],
+            'round': C.hvs[self.n_round]['round'],
+        }
+
+class Ronda_6_fir(Page):
+    n_round=5
+    form_model = 'player'
+    form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
+    def vars_for_template(self):
+        self.player.winner_6 = 'B'
+        lst_order = ['A', 'B']
+        #random.shuffle(lst_order) #aleatorizar entre A y B
+        #print(lst_order)
+
+        return {
+            'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
+            'worker_2': C.hvs[self.n_round][lst_order[1]],
+            'text': C.hvs[self.n_round]['text'],
+            'round': C.hvs[self.n_round]['round'],
+        }
+
+class Ronda_7_fir(Page):
+    n_round=6
+    form_model = 'player'
+    form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
+    def vars_for_template(self):
+        self.player.winner_7 = 'B'
+        lst_order = ['A', 'B']
+        #random.shuffle(lst_order) #aleatorizar entre A y B
+        #print(lst_order)
+
+        return {
+            'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
+            'worker_2': C.hvs[self.n_round][lst_order[1]],
+            'text': C.hvs[self.n_round]['text'],
+            'round': C.hvs[self.n_round]['round'],
+        }
+
+class Ronda_8_fir(Page):
+    n_round=7
+    form_model = 'player'
+    form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
+    def vars_for_template(self):
+        self.player.winner_8 = 'A'
+        lst_order = ['A', 'B']
+        #random.shuffle(lst_order) #aleatorizar entre A y B
+        #print(lst_order)
+
+        return {
+            'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
+            'worker_2': C.hvs[self.n_round][lst_order[1]],
+            'text': C.hvs[self.n_round]['text'],
+            'round': C.hvs[self.n_round]['round'],
+        }
+######################################################################
 class Pagos_firmas(Page):
     def vars_for_template(self):
         #n_rounds_payoff = C.n_rounds_payoff
-        n_rounds_payoff = 2
+        n_rounds_payoff = 4
         lst_rounds = list(range(1, C.n_rounds+1)) ## Ya aparece 1,2,3 no 0,1,2
         print("lista desordenada: ", lst_rounds)
         random.shuffle(lst_rounds)
@@ -95,6 +177,16 @@ class Pagos_firmas(Page):
                 'tokens': self.player.tokens_round_2},
             3: {'winner': self.player.winner_3, 'my_choose': self.player.selected_round_3,
                 'tokens': self.player.tokens_round_3},
+            4: {'winner': self.player.winner_4, 'my_choose': self.player.selected_round_4,
+                'tokens': self.player.tokens_round_4},
+            5: {'winner': self.player.winner_5, 'my_choose': self.player.selected_round_5,
+                'tokens': self.player.tokens_round_5},
+            6: {'winner': self.player.winner_6, 'my_choose': self.player.selected_round_6,
+                'tokens': self.player.tokens_round_6},
+            7: {'winner': self.player.winner_7, 'my_choose': self.player.selected_round_7,
+                'tokens': self.player.tokens_round_7},
+            8: {'winner': self.player.winner_8, 'my_choose': self.player.selected_round_8,
+                'tokens': self.player.tokens_round_8},
         }
 
         ## rondas a pagar son 4 y serían a, b, c y d
@@ -115,9 +207,21 @@ class Pagos_firmas(Page):
         else:
             self.player.round_b_to_payoff_tokens = winners[lst_rounds[1]]['tokens'] * -1
 
-    # Mientras defino c y d
-        self.player.round_c_to_payoff_tokens = 0
-        self.player.round_d_to_payoff_tokens = 0
+        ## guardar el número de la segunda ronda a pagar -> c
+        self.player.round_c_to_payoff_selected = str(lst_rounds[2])
+        ## y lo que ganó o perdió en tokens
+        if (winners[lst_rounds[2]]['winner'] == winners[lst_rounds[2]]['my_choose']):
+            self.player.round_c_to_payoff_tokens = winners[lst_rounds[2]]['tokens'] * 1
+        else:
+            self.player.round_c_to_payoff_tokens = winners[lst_rounds[2]]['tokens'] * -1
+
+        ## guardar el número de la segunda ronda a pagar -> d
+        self.player.round_d_to_payoff_selected = str(lst_rounds[3])
+        ## y lo que ganó o perdió en tokens
+        if (winners[lst_rounds[3]]['winner'] == winners[lst_rounds[3]]['my_choose']):
+            self.player.round_d_to_payoff_tokens = winners[lst_rounds[3]]['tokens'] * 1
+        else:
+            self.player.round_d_to_payoff_tokens = winners[lst_rounds[3]]['tokens'] * -1
 
 ## Total de tokens por jugador
         self.player.tokens_total = self.player.round_a_to_payoff_tokens + self.player.round_b_to_payoff_tokens + self.player.round_c_to_payoff_tokens + self.player.round_d_to_payoff_tokens
@@ -127,18 +231,16 @@ class Pagos_firmas(Page):
             'total_tokens': self.player.tokens_total
         }
 
-        #participant = player.participant
-        #participant.payoff_ind = total.tokens
     def before_next_page(self):
         self.participant.vars['tokens_total_firma'] = self.player.tokens_total
 
 
 
-rondas = [Ronda_1_firm, Ronda_2_firm, Ronda_3_firm]
+rondas = [Ronda_1_fir, Ronda_2_fir, Ronda_3_fir, Ronda_4_fir, Ronda_5_fir, Ronda_6_fir, Ronda_7_fir, Ronda_8_fir]
 random.shuffle(rondas)
 
 
 
-page_sequence = rondas + [Pagos_firmas]
+page_sequence = [Instrucciones] + rondas + [Pagos_firmas]
 print("order pages", page_sequence)
 

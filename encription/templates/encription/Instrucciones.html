@@ -1,0 +1,51 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block styles %}
+<style type="text/css">
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+</style>
+{% endblock %}
+
+{{ block title }}
+    <p>Primera parte - Codificación de palabras</p>
+    <p>Instrucciones de la tarea</p>
+{{ endblock }}
+{{ block content }}
+    <p>¡Bienvenido a la primera parte de esta actividad! </p>
+
+<p> Esta tarea dura entre 5 y 10 minutos incluyendo la lectura de estas instrucciones y un pequeño entrenamiento.  Su trabajo es codificar combinaciones de letras en números. En la pantalla verá una "palabra" compuesta por tres letras, usted deberá escribir el número de tres cifras que le corresponde a cada letra de esa palabra. En la parte inferior usted encontrará una tabla en la que puede ver el código de tres números que le corresponde a cada letra de la palabra.  </p>
+    <p> Cuando termine de reemplazar el número completo puede dar click en “Aceptar” y continuar con la codificación de la siguiente palabra. Así seguirá hasta que logre la mayor cantidad de palabras codificadas durante los tres minutos. Observe el siguiente ejemplo: </p>
+
+<div class="image-container">
+<img src="{% static 'Ejemplo_encrip.png' %}" width="90%" height="50%">
+</div>
+
+<p>
+    Acá la palabra es formada por las letras <b>"K", "E", "X"</b>. Para empezar a codificar la palabra, debe buscar el número de tres cifras que le corresponde a cada letra. Note que a la letra <b>"K"</b> le corresponde el número <b>"254"</b>, como lo señala el círculo negro del cuadro inferior. Ese es el número que se digita en la casilla que la letra <b>"K"</b> tiene debajo. Luego, siga con las demás letras y seleccione "Aceptar". Para pasar de una casilla a otra, seleccione la casilla con el mouse o tocándola en la pantalla con sus dedos. Tome en cuenta que la tabla de correspondencias cambiará cada que inicie una nueva palabra, es decir, las letras tomarán siempre valores diferentes cada que termine de codificar la palabra.
+</p>
+
+<p> Si se equivoca en alguna codificación, el juego no lo dejará avanzar hasta que corrija. Cuando se haya equivocado, un aviso rojo aparecerá indicando el número de errores. Cuando los corrija puede continuar. Así lo hará varias veces durante estos tres minutos. Entre más cifras codifique correctamente, más UMEs recibirá.</p>
+    <p>Al finalizar, la pantalla le indicará el número de palabras codificadas de manera correcta y la ganancia total de este juego. <b>Por cada codificación correcta usted recibirá 2 UMEs</b>. </p>
+    <p> Seleccione "Continuar" para iniciar una breve práctica </p>
+
+    <p>¡Mucha suerte!</p>
+
+    <em>{{ formfields }}</em>
+
+<div class="row">
+    <div class="col">
+        <div class="text-end">
+            <button class="otree-btn-next btn-lg btn-primary">Continuar</button>
+        </div>
+    </div>
+</div>
+
+{{ endblock }}

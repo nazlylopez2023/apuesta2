@@ -3,7 +3,7 @@ from os import environ
 SESSION_CONFIGS = [
     dict(
         name = 'Apuesta_ind',
-        app_sequence = ['apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'],
+        app_sequence = ['apuesta_firmas','pagina_final'],   #'encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'
         num_demo_participants = 3,
         display_name = 'Apuesta individual'
     ),
@@ -28,7 +28,7 @@ SESSION_CONFIGS = [
     #),
 ]
 
-INSTALLED_APPS = ['apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final']
+INSTALLED_APPS = ['apuesta_firmas','pagina_final']      #'encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
 # in SESSION_CONFIGS, except those that explicitly override it.

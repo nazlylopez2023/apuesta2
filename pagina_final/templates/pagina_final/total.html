@@ -1,21 +1,32 @@
 {% extends "global/Base.html" %}
 
 {{ block title }}
-    Estos son sus pagos finales
+    ¡Muchas gracias por participar en nuestro estudio!
 {{ endblock }}
 {{ block content }}
 
+Estas son sus ganancias totales:
+
    	<div class="div_pago">
-        
-  En la primera etapa (individual) usted ganó {{tokens_total_ind}} tokens.
         <br>
-  En la segunda etapa (grupo) usted ganó {{tokens_total_grupo}} tokens.
+  En la tarea de encriptación, usted ganó {{tokens_encription}} tokens.
         <br>
-  En la tercera etapa (firmas) usted ganó {{tokens_total_firma}} tokens.
+  En la primera etapa de elección individual, usted ganó {{tokens_total_ind}} tokens.
+        <br>
+  En la segunda etapa de elección grupal, usted ganó {{tokens_total_grupo}} tokens.
+        <br>
+  En la tercera etapa de predicción de la elección de las empresas, usted ganó {{tokens_total_firma}} tokens.
         <br>
 
-   	</div>
+ En total usted <b>obtuvo {{tokens_totales}} tokens, que equivalen a $ {{pago_monetario}} pesos. </b>
+         <br>
+        <br>
+Por favor, no olvide diligenciar el formulario con letra clara para realizar la transferencia bancaria de sus ganancias
+        <br>
+Recuerde que la cuenta bancaria debe estar a su nombre, caso contrario, el pago será rechazado. 
+      	</div>
 
- En total usted <b>obtuvo {{tokens_totales}} tokens. </b>
+
+
 
 {{ endblock }}

@@ -15,14 +15,7 @@
 <div class="div_tabWorkers">
         <div class="div_tabWorker" id="div_tabWorker_1" onclick="selectworker(this)">
             <table class="tabWorker">
-               <tr>
-                  <td class="td_info" style="width:40%;">
-                      <b>Número de documento</b>
-                  </td>
-                  <td class="td_info">
-                      {{ worker_1.num_doc }}
-                  </td>
-               </tr>
+
 
                 <tr>
                   <td class="td_info">
@@ -33,13 +26,22 @@
                   </td>
                </tr>
 
+                               <tr>
+                  <td class="td_info" style="width:40%;">
+                      <b>Número de documento</b>
+                  </td>
+                  <td class="td_info">
+                      {{ worker_1.num_doc }}
+                  </td>
+               </tr>
+
 
                 <tr>
                   <td class="td_info">
-                      <b>Género</b>
+                      <b>Lugar de nacimiento</b>
                   </td>
                   <td class="td_info">
-                      {{ worker_1.gen }}
+                      {{ worker_1.lug_nac }}
                   </td>
                </tr>
 
@@ -48,7 +50,7 @@
                       <b>Edad</b>
                   </td>
                   <td class="td_info">
-                      {{ worker_1.age }}
+                      {{ worker_1.lug_nac }}
                   </td>
                </tr>
 
@@ -76,20 +78,13 @@
             </table>
             <div class="div_radButton">
             <input type="radio" value="{{ worker_1.type }}" id="rad_candidato_1" name="selected_round_{{ round }}">
-            <label for="rad_candidato_1">Candidato 1</label>
+            <label for="rad_candidato_1">Candidato A</label>
             </div>
     </div>
 
         <div class="div_tabWorker" id="div_tabWorker_2" onclick="selectworker(this)">
             <table class="tabWorker">
-               <tr>
-                  <td class="td_info" style="width:40%;">
-                      <b>Número de documento:</b>
-                  </td>
-                  <td class="td_info">
-                      {{ worker_2.num_doc }}
-                  </td>
-               </tr>
+
 
                 <tr>
                   <td class="td_info">
@@ -100,13 +95,22 @@
                   </td>
                </tr>
 
+                <tr>
+                  <td class="td_info" style="width:40%;">
+                      <b>Número de documento:</b>
+                  </td>
+                  <td class="td_info">
+                      {{ worker_2.num_doc }}
+                  </td>
+               </tr>
+
 
                 <tr>
                   <td class="td_info">
-                      <b>Género</b>
+                      <b>Lugar de nacimiento</b>
                   </td>
                   <td class="td_info">
-                      {{ worker_2.gen }}
+                      {{ worker_2.lug_nac }}
                   </td>
                </tr>
 
@@ -144,7 +148,7 @@
             <div class="div_radButton">
             <input type="radio" value="{{ worker_2.type }}" id="rad_candidato_2" name="selected_round_{{ round }}" required>
 
-            <label for="rad_candidato_2">Candidato 2
+            <label for="rad_candidato_2">Candidato B
             </label>
             </div>
     </div>
