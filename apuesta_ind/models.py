@@ -135,7 +135,7 @@ class C(BaseConstants):
                             'Cajero de Movistar Arena'
                             ],
                 'lvl_edu': 'Técnico',
-                'type': '',
+                'type': 'B',
             },
             'text': "Entre el Candidato A y el Candidato B ¿A quién recomendaría para un puesto de <b>supervisor de tienda</b>?",
             'round': '4'
