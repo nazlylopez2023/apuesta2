@@ -15,12 +15,12 @@ class total(Page):
     form_fields = ['tokens_totales']
 
     def vars_for_template(self):
-        tokens_encription = self.participant.vars.get('payout', 0)
+        tokens_encription = 20
         tokens_total_ind = self.participant.vars.get('tokens_total_ind', 0)
         tokens_total_grupo = self.participant.vars.get('tokens_total_grupo', 0)
         tokens_total_firma = self.participant.vars.get('tokens_total_firma', 0)
 
-        self.player.tokens_totales = tokens_encription + tokens_total_ind + tokens_total_grupo + tokens_total_firma
+        self.player.tokens_totales = 20 + tokens_total_ind + tokens_total_grupo + tokens_total_firma
         return {'tokens_encription': tokens_encription,
                 'tokens_total_ind': tokens_total_ind,
                 'tokens_total_grupo': tokens_total_grupo,
