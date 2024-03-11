@@ -12,6 +12,7 @@ class C(BaseConstants):
     NUM_ROUNDS = 1
     n_rounds = 8
     n_rounds_payoff = 4
+    fee = 350
 
     #Hojas de Vida = lista con diccionarios dentro
     ## Listas -> estructuras ordenadas, separados por comas
@@ -22,11 +23,11 @@ class C(BaseConstants):
             'A':{
             'tipo_doc': 'Cédula de Extranjería' ,
             'num_doc': '21.479.372',
-            'lug_nac': 'Venezuela',
+            'lug_nac': 'Maracay (Venezuela)',
             'age': '37',
             'las_exp': ['Orientador trámites de tránsito - Entre 3 y 6 meses',
                         'Lavador de carro - Entre 3 y 6 meses',
-                        'Lavador de carro - Entre 7 y 9 meses'
+                        'Lavador de carro - Entre 10 y 12 meses'
                         ],
             'lvl_edu': 'Secundaria',
             'type': 'A',
@@ -38,7 +39,7 @@ class C(BaseConstants):
             'lug_nac': 'Bogotá D.C.',
             'age': '29',
             'las_exp': ['Operario de aseo - Más de 12 meses',
-                        'Ayudante de pastelería - 3 meses',
+                        'Ayudante de pastelería - Entre 3 y 6 meses',
                         'Operario de aseo - Entre 3 y 6 meses'
                         ],
             'lvl_edu': 'Secundaria',
@@ -56,9 +57,9 @@ class C(BaseConstants):
                 'num_doc': '1.016.060.489',
                 'lug_nac': 'Puerto Leguízamo (Putumayo)',
                 'age': '29',
-                'las_exp': ['Mesero - Entre 3 y 6 meses',
+                'las_exp': ['Mesero - Entre  7 y 9 meses',
                             'Domiciliario - Entre 3 y 6 meses',
-                            'Mesero - Entre 3 y 6 meses'
+                            'Mesero - Entre 10 y 12 meses meses'
                             ],
                 'lvl_edu': 'Secundaria',
                 'type': 'A',
@@ -100,14 +101,14 @@ class C(BaseConstants):
                 'num_doc': '80.772.995',
                 'lug_nac': 'Bogotá D.C.',
                 'age': '38',
-                'las_exp': ['Auxiliar de Bodega - Entre 10 y 12 meses',
+                'las_exp': ['Auxiliar de Bodega - Más de 12 meses',
                             'Auxiliar postal - Más de 12 meses',
-                            'Codificador - Más de 12 meses'
+                            'Codificador se sistemas - Más de 12 meses'
                             ],
                 'lvl_edu': 'Técnico',
                 'type': 'B',
             },
-            'text': "Entre el Candidato A y el Candidato B ¿A quién recomendaría para un puesto de <b>secretario asistente</b>?",
+            'text': "Entre el Candidato A y el Candidato B ¿A quién recomendaría para un puesto de <b>secretario multitasking</b>?",
             'round': '3'
         },
     # hoja de vida # 3
@@ -119,7 +120,7 @@ class C(BaseConstants):
                 'age': '33',
                 'las_exp': ['Vendedor restaurante de cadena - Más de 12 meses ',
                             'Vigilante - Entre 7 y 9 meses',
-                            'Auxiliar de vendedor restaurante de cadena - Más de 12 meses'
+                            'Auxiliar restaurante de cadena - Más de 12 meses'
                             ],
                 'lvl_edu': 'Técnico',
                 'type': 'A',
@@ -130,12 +131,12 @@ class C(BaseConstants):
                 'num_doc': '749.965',
                 'lug_nac': 'Valencia (Venezuela)',
                 'age': '32',
-                'las_exp': ['Auxiliar tienda de cadena - 3 meses',
+                'las_exp': ['Auxiliar tienda de cadena - Entre 3 y 6 meses',
                             'Mesero - Más de 12 meses',
-                            'Cajero de Movistar Arena'
+                            'Cajero de Movistar Arena - Entre 3 y 6 meses'
                             ],
                 'lvl_edu': 'Técnico',
-                'type': '',
+                'type': 'B',
             },
             'text': "Entre el Candidato A y el Candidato B ¿A quién recomendaría para un puesto de <b>supervisor de tienda</b>?",
             'round': '4'
@@ -146,11 +147,11 @@ class C(BaseConstants):
             'A': {
                 'tipo_doc': 'Permiso Especial de Permanencia',
                 'num_doc': '4.668.040',
-                'lug_nac': 'Venezuela',
+                'lug_nac': 'San Cristobal (Venezuela)',
                 'age': '33',
                 'las_exp': ['Vendedor de fruver - Entre 7 y 9 meses',
-                            'Vendedor de fruver - Entre 7 y 9 meses',
-                            'Vendedor de fruver - Entre 7 y 9 meses'
+                            'Vendedor de tienda - Entre 3 y 6 meses',
+                            'Vendedor de fruver - Más de 12 meses'
                             ],
                 'lvl_edu': 'Secundaria',
                 'type': 'A',
@@ -162,8 +163,8 @@ class C(BaseConstants):
                 'lug_nac': 'Villa de Cura (Venezuela)',
                 'age': '26',
                 'las_exp': ['Vendedor independiente - Más de 12 meses',
-                            'Vendedor de fruver - Más de 12 meses',
-                            'Vendedor de fruver - Más de 12 meses'
+                            'Vendedor de fruver - Entre 7 y 9 meses',
+                            'Vendedor de fruver - Entre 10 y 12 meses'
                             ],
                 'lvl_edu': 'Secundaria',
                 'type': 'B',
@@ -208,9 +209,9 @@ class C(BaseConstants):
                 'num_doc': '1.233.503.273',
                 'lug_nac': 'Bogotá D.C.',
                 'age': '24',
-                'las_exp': ['Mensajero - 3 meses',
-                            'Vendedor - 3 meses',
-                            'Auxiliar logístico - 3 meses'
+                'las_exp': ['Mensajero - Entre 7 y 8 meses',
+                            'Vendedor - Entre 3 y 6 meses',
+                            'Auxiliar logístico - Entre 10 y 12 meses'
                             ],
                 'lvl_edu': 'Universitario',
                 'type': 'A',
@@ -250,11 +251,11 @@ class C(BaseConstants):
             'B': {
                 'tipo_doc': 'Permiso Especial de Permanencia',
                 'num_doc': '22.283.194',
-                'lug_nac': 'Venezuela',
+                'lug_nac': 'Caracas (Venezuela)',
                 'age': '28',
                 'las_exp': ['Cajero de supermercado - Más de 12 meses',
-                            'Domiciliario - Más de 12 meses',
-                            'Domiciliario - Más de 12 meses'
+                            'Domiciliario - Entre 7 y 9 meses',
+                            'Domiciliario - Entre 10 y 12 meses'
                             ],
                 'lvl_edu': 'Técnico',
                 'type': 'B',
@@ -267,10 +268,14 @@ class C(BaseConstants):
 
 
 class Subsession(BaseSubsession):
-    def app_after_this_page(self, upcoming_apps):
-        if self.round_number == C.n_rounds:
-            return 'apuesta_grupo'
-
+    winner_round_1 = models.StringField()
+    winner_round_2 = models.StringField()
+    winner_round_3 = models.StringField()
+    winner_round_4 = models.StringField()
+    winner_round_5 = models.StringField()
+    winner_round_6 = models.StringField()
+    winner_round_7 = models.StringField()
+    winner_round_8 = models.StringField()
 
 class Group(BaseGroup):
     pass
@@ -296,14 +301,15 @@ class Player(BasePlayer):
     selected_round_8 = models.StringField(initial = "-")
     tokens_round_8= models.IntegerField(initial = -1)
 
-    winner_1 = models.StringField()
-    winner_2 = models.StringField()
-    winner_3 = models.StringField()
-    winner_4 = models.StringField()
-    winner_5 = models.StringField()
-    winner_6 = models.StringField()
-    winner_7 = models.StringField()
-    winner_8 = models.StringField()
+    winner_round_1 = models.StringField()
+    winner_round_2 = models.StringField()
+    winner_round_3 = models.StringField()
+    winner_round_4 = models.StringField()
+    winner_round_5 = models.StringField()
+    winner_round_6 = models.StringField()
+    winner_round_7 = models.StringField()
+    winner_round_8 = models.StringField()
+
 # Payoffs
     ## depende de la cantidad de rondas a pagar
     ### ronda 1 a pagar
@@ -321,5 +327,9 @@ class Player(BasePlayer):
 
     ## Cálculo de los tokens totales
     tokens_total = models.IntegerField()
+    ## tokens que se van acumulan entre etapas
+    tokens_acum = models.IntegerField()
+    ## Pago en pesos
+    pago_monetario = models.IntegerField()
 
 

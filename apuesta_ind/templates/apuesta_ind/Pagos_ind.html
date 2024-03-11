@@ -1,20 +1,21 @@
 {% extends "global/Page.html" %}
 
 {% block title %}
-    Pagos
+    Estos son sus resutados de la primera etapa
+<!-- Estos son sus resultados -->
 {% endblock %}
 
 {% block content %}
 
-De las 8 rondas jugadas se escogieron las siguientes para pagarle:
+De las ocho (8) duplas evaluadas se escogieron las siguientes cuatro (4) para pagarle:
 {% for ronda, valores in winners.items %}
 	{% if ronda in rounds_to_payoff %}
 	<div class="div_pago">
 	<b>Ronda # {{ ronda }}</b>
 	<br>
-	En esta ronda usted escogió el candidato {{ valores.my_choose }} apostando {{  valores.tokens }} tokens.
+	En esta dupla usted escogió el candidato {{ valores.my_choose }} apostando {{  valores.tokens }} tokens.
 	<br>
-	El ganador de esta ronda era candidato {{ valores.winner }}.
+	El ganador de esta dupla era candidato {{ valores.winner }}.
 	<br>
 	Por lo tanto usted <b>
 		{% if valores.my_choose == valores.winner %}       <!-- valores es porque el total de items en winners -->
@@ -33,12 +34,42 @@ De las 8 rondas jugadas se escogieron las siguientes para pagarle:
 	{% endif %}
 {% endfor %}
 
-En total, usted obtuvo {{ total_tokens }} tokens.
+Usted obtuvo {{ total_tokens }} tokens en esta etapa
+    {% if tokens_acum < 0 %}
+        <p> Usted ha acumulado ganancias negativas que superan la suma fija que obtuvo en la tarea de codificación. Lamentablemente, no puede continuar jugando.</p>
+		<p> En este momento puede abandonar la sala para que el equipo del laboratorio le haga entrega del subsidio de transporte. </p>
+		<p> ¡Muchas gracias por su participación en este estudio! </p>
 
+         {% else %}
+<br>
+        <p>Puede avanzar a la siguiente.</p>
 <div class="div_btnNext" id="div_btnNext">
 	<input type="button" id="btnNext" class="btnNext" value="Siguiente" onclick="nextView()">
 	<button class="otree-btn-next btn btn-primary" style="display: none;" id="id_next" disabled>Siguiente</button>
 </div>
+    {% endif %}
+
+ <!-- Pagos para las firmas
+
+   <div class="div_pago">
+<p> <b>Adicionados con los 350 tokens obtenidos en la tarea de decodificación, en total usted ha ganado {{tokens_acum}} </p>
+
+<br>
+    {% if tokens_acum < 0 %}
+        <p>Usted ha acumulado ganancias negativas que superan la suma fija obtenida en la tarea de decodificación. Solo se le pagará el subsidio de transporte que puede reclamar en efectivo al salir de la sala.</p>
+		<p> Muchas gracias por su participación en este estudio </p>
+
+         {% else %}
+        <p>¡Felicitaciones por sus ganancias! Los tokens obtenidos equivalen a , que equivalen a <b>${{ pago_monetario }} pesos </b></p>
+		<p> Recuerde diligenciar, con letra clara, el formato de pago dispuesto por el equipo del laboratorio. Recuerde que sus datos personales debe coincidir con los registrados en su cuenta banacaria.</p>
+		<p> Entregue el formato firmado al equipo antes de reclamar el subsidio de transporte.</p>
+        <p>Muchas gracias por su participación en este estudio</p>
+ </div>
+<div class="div_btnNext" id="div_btnNext">
+	<input type="button" id="btnNext" class="btnNext" value="Siguiente" onclick="nextView()">
+	<button class="otree-btn-next btn btn-primary" style="display: none;" id="id_next" disabled>Siguiente</button>
+</div>
+    {% endif %}-->
 
 
 {% endblock %}

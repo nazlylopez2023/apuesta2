@@ -20,6 +20,7 @@ class Constants(BaseConstants):
     name_in_url = 'encription'
 
     letters_per_word = 3
+    fee = 350
 
     use_timeout = True
     seconds_per_period = 180
@@ -87,7 +88,7 @@ class Player(BasePlayer):
     def calculate_payoff(self):
 
         if self.performance > 0:
-            self.payout = 20
+            self.payout = Constants.fee
         else:
             self.payout = 0
 

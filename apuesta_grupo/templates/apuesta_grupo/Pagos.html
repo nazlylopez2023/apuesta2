@@ -1,20 +1,20 @@
 {% extends "global/Page.html" %}
 
 {% block title %}
-    Pagos
+    Estos son sus resultados de la segunda etapa
 {% endblock %}
 
 {% block content %}
 
-De las 8 rondas jugadas se escogieron las siguientes para pagarle:
+De las ocho (8) duplas evaluadas se escogieron las siguientes cuatro (4) para pagarle:
 {% for ronda, valores in winners.items %}
 	{% if ronda in rounds_to_payoff %}
 	<div class="div_pago">
 	<b>Ronda # {{ ronda }}</b>
 	<br>
-	En esta ronda usted escogió el candidato {{ valores.my_choose }} apostando {{  valores.tokens }} tokens.
+	En esta dupla usted escogió el candidato {{ valores.my_choose }} apostando {{  valores.tokens }} tokens.
 	<br>
-	El ganador de esta ronda fue el candidato {{ valores.winner }}.
+	El ganador de esta dupla fue el candidato {{ valores.winner }}.
 	<br>
 	Por lo tanto usted <b>
 		{% if valores.my_choose == valores.winner %}       <!-- valores es porque el total de items en winners -->
@@ -33,12 +33,22 @@ De las 8 rondas jugadas se escogieron las siguientes para pagarle:
 	{% endif %}
 {% endfor %}
 
-En total, usted obtuvo {{ total_tokens }} tokens.
+Usted obtuvo {{ total_tokens }} tokens en esta etapa.
+<br>
 
+    {% if tokens_acum < 0 %}
+        <p>Tomando en cuenta lo obtenido en la etapa anterior y en esta segunda etapa de la actividad, usted ha acumulado ganancias negativas que superan la suma fija que obtuvo en la tarea de codificación. Lamentablemente, no puede continuar jugando.</p>
+		<p> En este momento puede abandonar la sala para que el equipo del laboratorio le haga entrega del subsidio de transporte. </p>
+		<p> ¡Muchas gracias por su participación en este estudio! </p>
+
+         {% else %}
+<br>
+        <p>Puede avanzar a la siguiente.</p>
 <div class="div_btnNext" id="div_btnNext">
 	<input type="button" id="btnNext" class="btnNext" value="Siguiente" onclick="nextView()">
 	<button class="otree-btn-next btn btn-primary" style="display: none;" id="id_next" disabled>Siguiente</button>
 </div>
+    {% endif %}
 
 
 {% endblock %}

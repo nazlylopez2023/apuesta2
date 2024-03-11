@@ -24,8 +24,9 @@ class Ronda_1_fir(Page):
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
-        self.player.winner_1 = 'A'
+
         lst_order = ['A', 'B']
+        self.player.winner_1 = 'A'
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
 
@@ -41,7 +42,7 @@ class Ronda_2_fir(Page):
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
-        self.player.winner_2 = 'A'
+        self.player.winner_2 = 'B'
         lst_order = ['A', 'B']
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
@@ -58,7 +59,7 @@ class Ronda_3_fir(Page):
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
-        self.player.winner_3 = 'A'
+        self.player.winner_3 = 'B'
         lst_order = ['A', 'B']
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
@@ -163,15 +164,16 @@ class Pagos_firmas(Page):
         random.shuffle(lst_rounds)
         lst_rounds = lst_rounds[:n_rounds_payoff]
         print("lista de rondas escogidas", lst_rounds)
-
-    #Escoger el ganador de cada ronda
-        ## Ronda_1
+        tokens_rondas = self.participant.vars.get('tokens_rondas', 0)
+        tokens_encription = self.participant.vars.get('payout', 0)
+        tokens_total_ind = self.participant.vars.get('tokens_total_ind', 0)
+        tokens_total_grupo = self.participant.vars.get('tokens_total_grupo', 0)
 
 
 ##rondas para pagar serían a, b, c y d
         ##Diccionario de ganadores        Acá llamo el ganador que defino en models.
         winners = {
-            1: {'winner': self.player.winner_1, 'my_choose': self.player.selected_round_1,
+            1: {'winner': self.player.winner_1 , 'my_choose': self.player.selected_round_1,
                 'tokens': self.player.tokens_round_1},
             2: {'winner': self.player.winner_2, 'my_choose': self.player.selected_round_2,
                 'tokens': self.player.tokens_round_2},
@@ -225,10 +227,19 @@ class Pagos_firmas(Page):
 
 ## Total de tokens por jugador
         self.player.tokens_total = self.player.round_a_to_payoff_tokens + self.player.round_b_to_payoff_tokens + self.player.round_c_to_payoff_tokens + self.player.round_d_to_payoff_tokens
+        tokens_acum = tokens_rondas +  self.player.tokens_total + C.fee
+        tokens_finales = tokens_encription + tokens_total_ind + tokens_total_grupo + self.player.tokens_total
         return {
             'rounds_to_payoff': lst_rounds, ## las rondas que vamos a pagar
             'winners': winners,
-            'total_tokens': self.player.tokens_total
+            'total_tokens': self.player.tokens_total,
+            'tokens_acum': tokens_acum,
+            'tokens_encription': tokens_encription,
+            'tokens_total_ind': tokens_total_ind,
+            'tokens_total_grupo': tokens_total_grupo,
+            'tokens_finales': tokens_finales,
+            'pago_monetario': tokens_acum * 100
+
         }
 
     def before_next_page(self):
@@ -236,11 +247,11 @@ class Pagos_firmas(Page):
 
 
 
-rondas = [Ronda_1_fir, Ronda_2_fir, Ronda_3_fir, Ronda_4_fir, Ronda_5_fir, Ronda_6_fir, Ronda_7_fir, Ronda_8_fir]
+rondas = [Ronda_1_fir, Ronda_2_fir, Ronda_3_fir, Ronda_4_fir, Ronda_5_fir, Ronda_6_fir, Ronda_7_fir, Ronda_8_fir]          #,
 random.shuffle(rondas)
 
 
 
-page_sequence = [Instrucciones] + rondas + [Pagos_firmas]
+page_sequence = [Instrucciones] + rondas + [Pagos_firmas]     # +
 print("order pages", page_sequence)
 

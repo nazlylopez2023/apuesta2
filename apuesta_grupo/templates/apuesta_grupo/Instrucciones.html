@@ -1,38 +1,18 @@
 {% extends "global/Page.html" %}
 
 {% block title %}
-    Etapa 2 - Elección grupal
+    Segunda etapa
 {% endblock %}
 
 {% block content %}
 
-¡Continuamos con la segunda etapa de esta actividad!  
-
-<br>
-    Ahora su decisión sobre los candidatos se basa en la elección que hacen de los demás participantes de esta sala. Si usted apuesta al candidato que es elegido por la mayoría, gana los tokens apostados, si apuesta al que menos es elegido por la sala, pierde los tokens apostados.
-<br>
-
-Este ejercicio también se desarrolla en ocho (8) rondas. Los pares de candidatos de esta etapa son diferentes a los pares de candidatos de la ronda anterior.
-
-<br>
-
-Por ningún motivo salga de la pantalla, los resultados de esta etapa dependen primordialmente de la elección grupal. En caso que alguien se salga, toda la sesión tendrá que ser repetida de nuevo y las ganancias obtenidas se perderán para todos los participantes de la sala.
-
-<br>
-
-Cuando haya terminado de elegir los candidatos en las ocho (8) rondas, el computador elegirá cuatro (4) rondas aleatoriamente para calcular sus ganancias, incluyendo las pérdidas. Tenga en cuenta que los ganadores de cada ronda no se definirán hasta que todos los participantes hayan elegido. En caso que alguien en la sala no haya completado sus ocho (8) elecciones, los demás participantes deberán esperar hasta que él o ellos finalicen.
-
-<br>
-
-<b> Por ningún motivo salga de la pantalla, los resultados de esta etapa dependen primordialmente de la elección grupal. En caso que alguien se salga, toda la sesión tendrá que ser repetida de nuevo y las ganancias obtenidas se perderán para todos los participantes de la sala. </b>
-
-<br>
-
-Si tiene dudas, levante la mano para que alguien del equipo se acerque a su escritorio y la resuelva antes de comenzar. Evite siempre hacer preguntas en voz alta.
-
-<br>
-
-Ahora, dé click en el botón "Siguiente"
+<p>Ahora debe elegir el candidato de cada una de las ocho (8) duplas que crea fue el más seleccionado por los participantes de esta sala en la etapa anterior. Al inicio de cada dupla usted contará con 100 tokens para realizar su apuesta al candidato que considere ha sido elegido por la mayoría de los participantes en la etapa anterior. Imaginemos que usted apuesta X número de tokens a un candidato de la dupla. Aquí pueden pasar tres cosas:</p>
+<p><li> Si usted apuesta en la dupla por el candidato que fue el más escogido, ganará los tokens apostados. Por tanto, su ganancia de la dupla será +X.</li></p>
+<p><li> Si usted apuesta por el candidato que fue el menos escogido, entonces usted perderá los tokens apostados. Por tanto, su ganancia de la dupla será -X.</li></p>
+<p><li> Si usted no realiza ninguna apuesta, su ganancia de la dupla.</li></p>
+<p>Al final de esta etapa, cuando el computador escoja a azar las cuatro (4) duplas que serán pagadas, se sumarán las ganancias y pérdidas. Tome en cuenta que las ganancias y pérdidas se acumulan con lo obtenido en la etapa anterior. Si el saldo acumulado es positivo, puede continuar a la tercera etapa para seguir aumentando sus ganancias. Si el saldo acumulado es negativo, se descontará de la suma fija obtenida por hacer la tarea de decodificación y podrá continuar, en caso de que quede con un remanente positivo. No obstante, si su saldo acumulado de pérdidas es mayor que la suma fija, usted no podrá continuar con el resto del ejercicio, es decir, perderá la oportunidad de ganar más dinero.</p>
+<p>Si tiene dudas, levante la mano para que alguien del equipo se acerque a su escritorio y la resuelva antes de comenzar. Evite siempre hacer preguntas en voz alta.</p>
+<p>Ahora, dé click en el botón "Siguiente"</p>
 <div class="div_btnNext">
     <input type="button" id="btnNext" class="btnNext" value="Siguiente" onclick="nextView()">
     <button class="otree-btn-next btn btn-primary" style="display: none;" id="id_next" disabled>Siguiente</button>

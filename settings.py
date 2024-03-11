@@ -3,7 +3,7 @@ from os import environ
 SESSION_CONFIGS = [
     dict(
         name = 'Apuesta_ind',
-        app_sequence = ['bienvenida','encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'],   #'encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'
+        app_sequence = ['bienvenida','encription','apuesta_ind','apuesta_grupo','apuesta_firmas'],   #'encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'
         num_demo_participants = 3,
         display_name = 'Apuesta individual'
     ),
@@ -28,7 +28,7 @@ SESSION_CONFIGS = [
     #),
 ]
 
-INSTALLED_APPS = ['apuesta_firmas','pagina_final']      #'encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'
+INSTALLED_APPS = ['bienvenida','encription','apuesta_ind','apuesta_grupo','apuesta_firmas']      #'encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
 # in SESSION_CONFIGS, except those that explicitly override it.
@@ -39,7 +39,7 @@ SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
 )
 
-PARTICIPANT_FIELDS = ['bienvenida','encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final']
+PARTICIPANT_FIELDS = ['total_tokens','payout','tokens_total_ind','tokens_acum','tokens_rondas','tokens_total_grupo','tokens_total_firma']
 SESSION_FIELDS = []
 
 # ISO-639 code

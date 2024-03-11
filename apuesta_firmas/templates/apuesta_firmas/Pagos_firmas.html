@@ -1,20 +1,20 @@
 {% extends "global/Page.html" %}
 
 {% block title %}
-    Pagos
+    Estos son sus resultados de la tercera etapa
 {% endblock %}
 
 {% block content %}
 
-De las 8 rondas jugadas se escogieron las siguientes para pagarle:
+De las ocho (8) duplas evaluadas se escogieron las siguientes cuatro (4) para pagarle:
 {% for ronda, valores in winners.items %}
 	{% if ronda in rounds_to_payoff %}
 	<div class="div_pago">
 	<b>Ronda # {{ ronda }}</b>
 	<br>
-	En esta ronda usted escogió el candidato {{ valores.my_choose }} apostando {{  valores.tokens }} tokens.
+	En esta dupla usted escogió el candidato {{ valores.my_choose }} apostando {{  valores.tokens }} tokens.
 	<br>
-	El ganador de esta ronda era candidato {{ valores.winner }}.
+	El ganador de esta dupla era candidato {{ valores.winner }}.
 	<br>
 	Por lo tanto usted <b>
 		{% if valores.my_choose == valores.winner %}       <!-- valores es porque el total de items en winners -->
@@ -33,12 +33,40 @@ De las 8 rondas jugadas se escogieron las siguientes para pagarle:
 	{% endif %}
 {% endfor %}
 
-En total, usted obtuvo {{ total_tokens }} tokens.
+<p>Usted obtuvo {{ total_tokens }} tokens en esta etapa</p>
+    <div class="div_text">
+	<p><b>¡Ha llegado hasta el final de esta actividad!</b></p>
+	</div>
+<br>
+ <div class="div_pago">
+<p> <b>Este es un resumen de sus ganancias obtenidas en la actividad:</b> </p>
 
+  En la tarea de codificación, usted obtuvo {{tokens_encription}} tokens.
+        <br>
+  En la primera etapa obtuvo {{tokens_total_ind}} tokens.
+        <br>
+  En la segunda etapa obtuvo {{tokens_total_grupo}} tokens.
+        <br>
+  En la tercera etapa obtuvo {{total_tokens}} tokens.
+	 <p> En total, usted obtuvo {{ tokens_acum }} tokens que equivalen a <b>${{ pago_monetario }} pesos </b>
+
+<br>
+    {% if tokens_acum < 0 %}
+        <p>Usted ha acumulado ganancias negativas que superan la suma fija obtenida en la tarea de decodificación. Solo se le pagará el subsidio de transporte que puede reclamar en efectivo al salir de la sala.</p>
+		<p> Muchas gracias por su participación en este estudio </p>
+
+         {% else %}
+        <p>¡Felicitaciones por sus ganancias!</p>
+		<p> Recuerde diligenciar, con letra clara, el formato de pago dispuesto por el equipo del laboratorio. Recuerde que sus datos personales debe coincidir con los registrados en su cuenta banacaria.</p>
+		<p> Entregue el formato firmado al equipo antes de reclamar el subsidio de transporte.</p>
+        <p>Muchas gracias por su participación en este estudio</p>
+ </div>
 <div class="div_btnNext" id="div_btnNext">
 	<input type="button" id="btnNext" class="btnNext" value="Siguiente" onclick="nextView()">
 	<button class="otree-btn-next btn btn-primary" style="display: none;" id="id_next" disabled>Siguiente</button>
 </div>
+    {% endif %}
+
 
 
 {% endblock %}
