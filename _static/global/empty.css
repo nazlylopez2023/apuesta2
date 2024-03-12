@@ -33,16 +33,24 @@
 .div_tabWorkers {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
     align-items: center;
 }
 
 .div_tabWorker {
     width: 50%;
+<<<<<<< HEAD
     margin: 0px 10px;
     display: inline-block;
     font-size: 1rem;
     padding: 15px;
+=======
+    margin: 5px 20px;
+    display: cell;
+    justify-content: space-around;
+    font-size: 0.9rem;
+    padding: 5px;
+>>>>>>> a25549d19b71d9b12a141b32d80bc6f5aed329d3
     padding-bottom: 5px;
     cursor: pointer;
     border-radius: 15px;
@@ -57,7 +65,7 @@
 }
 
 .td_info {
-    padding: 5px 10px;
+    padding: 0px 10px;
     border: 1px solid #777777;
 }
 

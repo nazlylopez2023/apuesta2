@@ -1,33 +1,19 @@
 {% extends "global/Page.html" %}
 
 {% block title %}
-    Etapa 3 - Predicción elección de las empresas
+    Tercera etapa
 {% endblock %}
 
 {% block content %}
 
-¡Bienvenido a la última etapa de esta actividad!  
-
-<br>
-    En esta ocasión, hemos introducido un elemento adicional: en sesiones anteriores, la primera y segunda etapa de esta actividad fue aplicada con gerentes de pequeñas y medianas empresas. O sea, ellos realizaron la tarea de codificación de palabras y con base en ello y la información de las hojas de vida, entre duplas de candidatos por un puesto de trabajo, escogieron al que consideran tuvo mejor posicionamiento en el ranking para ocupar ese puesto.
-
-<br>
-Ahora su tarea será evaluar cuál cree que fue la hoja de vida seleccionada por las empresas en cada ronda.
-<br>
-
-Esta etapa también se desarrolla en ocho (8) rondas, en cada una debe elegir, entre la dupla de candidatos, aquel que considere fue el más elegido en la sesión donde participaron las empresas. Si usted apuesta la cantidad de tokens que desea al candidato más elegido por las firmas para un puesto de trabajo, se gana esos tokens, si apuesta los tokens al candidato menos elegido por las empresas, los pierde.
-
-<br>
-
-Al finalizar la elección en las ocho (8) rondas, se elegirán 4 rondas aleatoriamente para calcular sus ganancias, incluyendo las pérdidas. 
-
-<br>
-
-Si tiene dudas, levante la mano para que alguien del equipo se acerque a su escritorio y la resuelva antes de comenzar. Evite siempre hacer preguntas en voz alta.
-
-<br>
-
-Ahora, dé click en el botón "Siguiente"
+<p>En esta ocasión, hemos introducido un elemento adicional: en sesiones anteriores, la tarea de decodificación y la primera etapa de elección de candidatos fue aplicada con personal de recurso humano de pequeñas y medianas empresas. Así como usted, ellos tomaron el rol de reclutador de hojas de vida y apostaron al candidato que consideraron estuvo mejor posicionado en el ranking de desempeño, para ocupar un puesto de trabajo.</p>
+<p>Ahora su tarea será predecir cuál cree que fue la hoja de vida seleccionada por las empresas en cada dupla de candidatos. Esta etapa se desarrolla con las mismas (8) duplas que evaluaron las empresas.</p>
+<p>Imaginemos que usted apuesta X número de tokens a un candidato de la dupla. Aquí pueden pasar tres cosas:</p>
+<p><li> Si usted apuesta por el candidato de la dupla que fue más escogido por las empresas, ganará los tokens apostados. Su ganancia de la dupla será +X.</li></p>
+<p><li> Si usted apuesta por el candidato de la dupla que fue menos escogido por las empresas, perderá los tokens apostados. Su ganancia de la dupla será de –X.</li></p>
+<p><li> Si usted no realiza ninguna apuesta, su ganancia de la dupla será cero (0)</li></p>
+<p>Al final de esta etapa, cuando el computador escoja a azar las cuatro (4) duplas que serán pagadas, se sumarán las ganancias y pérdidas. Tome en cuenta que las ganancias y pérdidas de esta etapa se acumulan con lo obtenido en las dos etapas anteriores. Si el saldo acumulado al final de esta etapa es positivo, le será pagado en efectivo. Si el saldo acumulado hasta esta etapa es negativo, se descontará de la suma fija obtenida por hacer la tarea de decodificación y se le pagará el remanente positivo que quede. No obstante, si su saldo negativo acumulado en las tres etapas es mayor que la suma fija, usted solo recibirá el subsidio de transporte al salir de la sala.</p>
+<p>Si tiene dudas, levante la mano para que alguien del equipo se acerque a su escritorio y la resuelva antes de comenzar. Evite siempre hacer preguntas en voz alta.</p>
 <div class="div_btnNext">
     <input type="button" id="btnNext" class="btnNext" value="Siguiente" onclick="nextView()">
     <button class="otree-btn-next btn btn-primary" style="display: none;" id="id_next" disabled>Siguiente</button>

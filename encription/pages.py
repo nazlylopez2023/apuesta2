@@ -1,5 +1,5 @@
 from ._builtin import Page, WaitPage
-from .models import Constants
+from .models import Constants, Player
 
 
 class Inst_grales(Page):
@@ -69,8 +69,11 @@ class Task(Page):
 
 class Results(Page):
     def vars_for_template(self):
-        player = self.player
-        return {'payout': player.payout}
+        payout = self.player.payout
+        return {'payout': payout}
+
+    def before_next_page(self):
+        self.participant.vars['payout'] = self.player.payout
 
 
 class Out(Page):
@@ -82,6 +85,7 @@ class Out(Page):
 
     def is_displayed(self):
         return self.round_number == 1
+
 
 
 page_sequence = [

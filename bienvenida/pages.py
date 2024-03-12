@@ -7,6 +7,8 @@ from .models import C
 class Inst_grales(Page):
     form_model = 'player'
 
+class Fir_Inst_grales(Page):
+    form_model = 'player'
 
 class Consentimiento(Page):
     form_model = "player"
@@ -20,6 +22,9 @@ class Consentimiento(Page):
     #         # Indicar al participante que ha elegido no participar
     #         pass
 
+class Fir_consentimiento(Page):
+    form_model = "player"
+    form_fields = ['name', 'acepto']
 
 class NoAcepta(Page):
     player = 'models.Player'

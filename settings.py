@@ -6,6 +6,7 @@ SESSION_CONFIGS = [
         app_sequence = ['apuesta_firmas','pagina_final'],   #'encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'
         num_demo_participants = 3,
         display_name = 'Apuesta individual'
+
     ),
     #dict(
          #name='Apuesta_grupo',
@@ -28,7 +29,7 @@ SESSION_CONFIGS = [
     #),
 ]
 
-INSTALLED_APPS = ['apuesta_firmas','pagina_final']      #'encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'
+INSTALLED_APPS = ['bienvenida','encription','apuesta_ind','apuesta_grupo','apuesta_firmas']      #'encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
 # in SESSION_CONFIGS, except those that explicitly override it.
@@ -39,7 +40,8 @@ SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
 )
 
-PARTICIPANT_FIELDS = ['tokens_total_ind','tokens_total_grupo','tokens_total_firma']
+PARTICIPANT_FIELDS = ['total_tokens','payout','tokens_total_ind','tokens_acum','tokens_rondas','tokens_total_grupo','tokens_total_firma']
+
 SESSION_FIELDS = []
 
 ROOMS = [
@@ -56,7 +58,8 @@ LANGUAGE_CODE = 'es'
 
 # e.g. EUR, GBP, CNY, JPY
 USE_POINTS = True
-POINTS_CUSTOM_NAME = 'Tokens'
+POINTS_CUSTOM_NAME = 'pesos'
+REAL_WORLD_CURRENCY_CODE = "USD"
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
 ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')

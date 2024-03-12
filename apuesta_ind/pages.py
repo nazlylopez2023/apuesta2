@@ -24,7 +24,7 @@ class Ronda_1_ind(Page):
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
-        self.player.winner_1 = 'B'
+        self.player.winner_round_1 = 'B'
         lst_order = ['A', 'B']
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
@@ -41,7 +41,7 @@ class Ronda_2_ind(Page):
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
-        self.player.winner_2 = 'A'
+        self.player.winner_round_2 = 'A'
         lst_order = ['A', 'B']
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
@@ -58,7 +58,7 @@ class Ronda_3_ind(Page):
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
-        self.player.winner_3 = 'B'
+        self.player.winner_round_3 = 'B'
         lst_order = ['A', 'B']
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
@@ -74,7 +74,7 @@ class Ronda_4_ind(Page):
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
-        self.player.winner_4 = 'B'
+        self.player.winner_round_4 = 'B'
         lst_order = ['A', 'B']
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
@@ -91,7 +91,7 @@ class Ronda_5_ind(Page):
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
-        self.player.winner_5 = 'A'
+        self.player.winner_round_5 = 'A'
         lst_order = ['A', 'B']
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
@@ -108,7 +108,7 @@ class Ronda_6_ind(Page):
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
-        self.player.winner_6 = 'B'
+        self.player.winner_round_6 = 'B'
         lst_order = ['A', 'B']
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
@@ -125,7 +125,7 @@ class Ronda_7_ind(Page):
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
-        self.player.winner_7 = 'B'
+        self.player.winner_round_7 = 'B'
         lst_order = ['A', 'B']
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
@@ -142,7 +142,7 @@ class Ronda_8_ind(Page):
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
     def vars_for_template(self):
-        self.player.winner_8 = 'A'
+        self.player.winner_round_8 = 'A'
         lst_order = ['A', 'B']
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
@@ -164,6 +164,92 @@ class Pagos_ind(Page):
         lst_rounds = lst_rounds[:n_rounds_payoff]
         print("lista de rondas escogidas", lst_rounds)
 
+        # Escoger el ganador de cada ronda
+        ## Primero obtener todos los jugadores en la subsesión
+        players_per_subse = self.subsession.get_players()
+        print(players_per_subse)
+        round_1 = []
+        round_2 = []
+        round_3 = []
+        round_4 = []
+        round_5 = []
+        round_6 = []
+        round_7 = []
+        round_8 = []
+        for p in players_per_subse:
+            round_1.append(p.selected_round_1)
+            round_2.append(p.selected_round_2)
+            round_3.append(p.selected_round_3)
+            round_4.append(p.selected_round_4)
+            round_5.append(p.selected_round_5)
+            round_6.append(p.selected_round_6)
+            round_7.append(p.selected_round_7)
+            round_8.append(p.selected_round_8)
+        # Escoger el más elegido de cada ronda
+        ## Ronda_1
+        if round_1.count('A') > round_1.count('B'):
+            self.subsession.winner_round_1 = 'A'
+        elif round_1.count('B') > round_1.count('A'):
+            self.subsession.winner_round_1 = 'B'
+        else:
+            self.subsession.winner_round_1 = 'Empate'
+
+        ## Ronda_2
+        if round_2.count('A') > round_2.count('B'):
+            self.subsession.winner_round_2 = 'A'
+        elif round_2.count('B') > round_2.count('A'):
+            self.subsession.winner_round_2 = 'B'
+        else:
+            self.subsession.winner_round_2 = 'Empate'
+
+        ## Ronda_3
+        if round_3.count('A') > round_3.count('B'):
+            self.subsession.winner_round_3 = 'A'
+        elif round_3.count('B') > round_3.count('A'):
+            self.subsession.winner_round_3 = 'B'
+        else:
+            self.subsession.winner_round_3 = 'Empate'
+
+        ## Ronda_4
+        if round_4.count('A') > round_4.count('B'):
+            self.subsession.winner_round_4 = 'A'
+        elif round_4.count('B') > round_4.count('A'):
+            self.subsession.winner_round_4 = 'B'
+        else:
+            self.subsession.winner_round_4 = 'Empate'
+
+        ## Ronda_5
+        if round_5.count('A') > round_5.count('B'):
+            self.subsession.winner_round_5 = 'A'
+        elif round_5.count('B') > round_5.count('A'):
+            self.subsession.winner_round_5 = 'B'
+        else:
+            self.subsession.winner_round_5 = 'Empate'
+
+        ## Ronda_6
+        if round_6.count('A') > round_6.count('B'):
+            self.subsession.winner_round_6 = 'A'
+        elif round_6.count('B') > round_6.count('A'):
+            self.subsession.winner_round_6 = 'B'
+        else:
+            self.subsession.winner_round_6 = 'Empate'
+
+        ## Ronda_7
+        if round_7.count('A') > round_7.count('B'):
+            self.subsession.winner_round_7 = 'A'
+        elif round_7.count('B') > round_7.count('A'):
+            self.subsession.winner_round_7 = 'B'
+        else:
+            self.subsession.winner_round_7 = 'Empate'
+
+        ## Ronda_8
+        if round_8.count('A') > round_8.count('B'):
+            self.subsession.winner_round_8 = 'A'
+        elif round_8.count('B') > round_8.count('A'):
+            self.subsession.winner_round_8 = 'B'
+        else:
+            self.subsession.winner_round_8 = 'Empate'
+
     #Escoger el ganador de cada ronda
         ## Ronda_1
 
@@ -171,21 +257,21 @@ class Pagos_ind(Page):
 ##rondas para pagar serían a, b, c y d
         ##Diccionario de ganadores        Acá llamo el ganador que defino en models.
         winners = {
-            1: {'winner': self.player.winner_1, 'my_choose': self.player.selected_round_1,
+            1: {'winner': self.player.winner_round_1, 'my_choose': self.player.selected_round_1,
                 'tokens': self.player.tokens_round_1},
-            2: {'winner': self.player.winner_2, 'my_choose': self.player.selected_round_2,
+            2: {'winner': self.player.winner_round_2, 'my_choose': self.player.selected_round_2,
                 'tokens': self.player.tokens_round_2},
-            3: {'winner': self.player.winner_3, 'my_choose': self.player.selected_round_3,
+            3: {'winner': self.player.winner_round_3, 'my_choose': self.player.selected_round_3,
                 'tokens': self.player.tokens_round_3},
-            4: {'winner': self.player.winner_4, 'my_choose': self.player.selected_round_4,
+            4: {'winner': self.player.winner_round_4, 'my_choose': self.player.selected_round_4,
                 'tokens': self.player.tokens_round_4},
-            5: {'winner': self.player.winner_5, 'my_choose': self.player.selected_round_5,
+            5: {'winner': self.player.winner_round_5, 'my_choose': self.player.selected_round_5,
                 'tokens': self.player.tokens_round_5},
-            6: {'winner': self.player.winner_6, 'my_choose': self.player.selected_round_6,
+            6: {'winner': self.player.winner_round_6, 'my_choose': self.player.selected_round_6,
                 'tokens': self.player.tokens_round_6},
-            7: {'winner': self.player.winner_7, 'my_choose': self.player.selected_round_7,
+            7: {'winner': self.player.winner_round_7, 'my_choose': self.player.selected_round_7,
                 'tokens': self.player.tokens_round_7},
-            8: {'winner': self.player.winner_8, 'my_choose': self.player.selected_round_8,
+            8: {'winner': self.player.winner_round_8, 'my_choose': self.player.selected_round_8,
                 'tokens': self.player.tokens_round_8},
         }
 
@@ -225,14 +311,32 @@ class Pagos_ind(Page):
 
 ## Total de tokens por jugador
         self.player.tokens_total = self.player.round_a_to_payoff_tokens + self.player.round_b_to_payoff_tokens + self.player.round_c_to_payoff_tokens + self.player.round_d_to_payoff_tokens
+        self.player.tokens_acum = self.player.tokens_total + C.fee
+
         return {
             'rounds_to_payoff': lst_rounds, ## las rondas que vamos a pagar
             'winners': winners,
-            'total_tokens': self.player.tokens_total
+            'total_tokens': self.player.tokens_total,
+            'tokens_acum': self.player.tokens_acum,
+            'pago_monetario': self.player.tokens_acum * 100
         }
+
+
+
 
     def before_next_page(self):
         self.participant.vars['tokens_total_ind'] = self.player.tokens_total
+        self.participant.vars['winner_round_1'] = self.subsession.winner_round_1
+        self.participant.vars['winner_round_2'] = self.subsession.winner_round_2
+        self.participant.vars['winner_round_3'] = self.subsession.winner_round_3
+        self.participant.vars['winner_round_4'] = self.subsession.winner_round_4
+        self.participant.vars['winner_round_5'] = self.subsession.winner_round_5
+        self.participant.vars['winner_round_6'] = self.subsession.winner_round_6
+        self.participant.vars['winner_round_7'] = self.subsession.winner_round_7
+        self.participant.vars['winner_round_8'] = self.subsession.winner_round_8
+
+
+
 
 
 
@@ -241,6 +345,6 @@ random.shuffle(rondas)
 
 
 
-page_sequence = [Instrucciones] + rondas + [Pagos_ind]
+page_sequence = [Instrucciones] + rondas + [Espera,Pagos_ind]
 print("order pages", page_sequence)
 
