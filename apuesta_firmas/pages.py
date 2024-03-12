@@ -1,11 +1,13 @@
 from otree.api import *
 from .models import *
 import random
+from random import sample
 class MyPage(Page):
     pass
 
 class Espera(WaitPage):
-    print("Espere mientras los demás jugadores terminen")
+    pass
+    #print("Espere mientras los demás jugadores terminen")
 
 class ResultsWaitPage(WaitPage):
     pass
@@ -19,6 +21,7 @@ class Instrucciones(Page):
     pass
 
 
+
 class Ronda_1_fir(Page):
     n_round=0
     form_model = 'player'
@@ -30,12 +33,17 @@ class Ronda_1_fir(Page):
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
 
+
+
         return {
             'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
             'worker_2': C.hvs[self.n_round][lst_order[1]],
             'text': C.hvs[self.n_round]['text'],
             'round': C.hvs[self.n_round]['round'],
         }
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas'][0]
 
 class Ronda_2_fir(Page):
     n_round=1
@@ -47,12 +55,21 @@ class Ronda_2_fir(Page):
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
 
+
+
+
         return {
             'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
             'worker_2': C.hvs[self.n_round][lst_order[1]],
             'text': C.hvs[self.n_round]['text'],
             'round': C.hvs[self.n_round]['round'],
         }
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas'][1]
+
+
+
 
 class Ronda_3_fir(Page):
     n_round=2
@@ -64,12 +81,19 @@ class Ronda_3_fir(Page):
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
 
+
+
         return {
             'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
             'worker_2': C.hvs[self.n_round][lst_order[1]],
             'text': C.hvs[self.n_round]['text'],
             'round': C.hvs[self.n_round]['round'],
         }
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas'][2]
+
+
 class Ronda_4_fir(Page):
     n_round=3
     form_model = 'player'
@@ -80,12 +104,16 @@ class Ronda_4_fir(Page):
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
 
+
         return {
             'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
             'worker_2': C.hvs[self.n_round][lst_order[1]],
             'text': C.hvs[self.n_round]['text'],
             'round': C.hvs[self.n_round]['round'],
         }
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas'][3]
 
 class Ronda_5_fir(Page):
     n_round=4
@@ -97,12 +125,18 @@ class Ronda_5_fir(Page):
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
 
+
         return {
             'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
             'worker_2': C.hvs[self.n_round][lst_order[1]],
             'text': C.hvs[self.n_round]['text'],
             'round': C.hvs[self.n_round]['round'],
+
         }
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas'][4]
+
 
 class Ronda_6_fir(Page):
     n_round=5
@@ -114,12 +148,20 @@ class Ronda_6_fir(Page):
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
 
+
+
+
         return {
             'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
             'worker_2': C.hvs[self.n_round][lst_order[1]],
             'text': C.hvs[self.n_round]['text'],
             'round': C.hvs[self.n_round]['round'],
+
         }
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas'][5]
+
 
 class Ronda_7_fir(Page):
     n_round=6
@@ -131,12 +173,17 @@ class Ronda_7_fir(Page):
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
 
+
         return {
             'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
             'worker_2': C.hvs[self.n_round][lst_order[1]],
             'text': C.hvs[self.n_round]['text'],
             'round': C.hvs[self.n_round]['round'],
+
         }
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas'][6]
 
 class Ronda_8_fir(Page):
     n_round=7
@@ -148,22 +195,26 @@ class Ronda_8_fir(Page):
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
 
+
         return {
             'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
             'worker_2': C.hvs[self.n_round][lst_order[1]],
             'text': C.hvs[self.n_round]['text'],
             'round': C.hvs[self.n_round]['round'],
         }
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas'][7]
+
 ######################################################################
 class Pagos_firmas(Page):
     def vars_for_template(self):
         #n_rounds_payoff = C.n_rounds_payoff
         n_rounds_payoff = 4
         lst_rounds = list(range(1, C.n_rounds+1)) ## Ya aparece 1,2,3 no 0,1,2
-        print("lista desordenada: ", lst_rounds)
+        #print("lista desordenada: ", lst_rounds)
         random.shuffle(lst_rounds)
         lst_rounds = lst_rounds[:n_rounds_payoff]
-        print("lista de rondas escogidas", lst_rounds)
+        #print("lista de rondas escogidas", lst_rounds)
         tokens_rondas = self.participant.vars.get('tokens_rondas', 0)
         tokens_encription = self.participant.vars.get('payout', 0)
         tokens_total_ind = self.participant.vars.get('tokens_total_ind', 0)
@@ -238,20 +289,21 @@ class Pagos_firmas(Page):
             'tokens_total_ind': tokens_total_ind,
             'tokens_total_grupo': tokens_total_grupo,
             'tokens_finales': tokens_finales,
-            'pago_monetario': tokens_acum * 100
+            'pago_monetario': tokens_finales * 100
 
         }
 
     def before_next_page(self):
         self.participant.vars['tokens_total_firma'] = self.player.tokens_total
 
+rondas = [Ronda_1_fir, Ronda_2_fir, Ronda_3_fir, Ronda_4_fir, Ronda_5_fir, Ronda_6_fir, Ronda_7_fir, Ronda_8_fir]
 
-
-rondas = [Ronda_1_fir, Ronda_2_fir, Ronda_3_fir, Ronda_4_fir, Ronda_5_fir, Ronda_6_fir, Ronda_7_fir, Ronda_8_fir]          #,
 random.shuffle(rondas)
 
 
 
-page_sequence = [Instrucciones] + rondas + [Pagos_firmas]     # +
-print("order pages", page_sequence)
+page_sequence = [Instrucciones] + rondas + [Pagos_firmas]
+
+
+
 

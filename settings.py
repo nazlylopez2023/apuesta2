@@ -3,9 +3,10 @@ from os import environ
 SESSION_CONFIGS = [
     dict(
         name = 'Apuesta_ind',
-        app_sequence = ['bienvenida','encription','apuesta_ind','apuesta_grupo','apuesta_firmas'],   #'encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'
+        app_sequence = ['apuesta_firmas'],   #'encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'
         num_demo_participants = 3,
         display_name = 'Apuesta individual'
+
     ),
     #dict(
          #name='Apuesta_grupo',
@@ -41,6 +42,15 @@ SESSION_CONFIG_DEFAULTS = dict(
 
 PARTICIPANT_FIELDS = ['total_tokens','payout','tokens_total_ind','tokens_acum','tokens_rondas','tokens_total_grupo','tokens_total_firma']
 SESSION_FIELDS = []
+page_sequence = ['Instrucciones','Ronda_1_fir', 'Ronda_2_fir', 'Ronda_3_fir', 'Ronda_4_fir', 'Ronda_5_fir', 'Ronda_6_fir', 'Ronda_7_fir', 'Ronda_8_fir']
+
+ROOMS = [
+    dict(
+        name='econ101',
+        display_name='Econ 101 class',
+        participant_label_file='_rooms/econ101.txt'
+    ),
+]
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
@@ -48,7 +58,8 @@ LANGUAGE_CODE = 'es'
 
 # e.g. EUR, GBP, CNY, JPY
 USE_POINTS = True
-POINTS_CUSTOM_NAME = 'Tokens'
+POINTS_CUSTOM_NAME = 'pesos'
+REAL_WORLD_CURRENCY_CODE = "USD"
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
 ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
