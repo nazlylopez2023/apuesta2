@@ -42,7 +42,6 @@ SESSION_CONFIG_DEFAULTS = dict(
 
 PARTICIPANT_FIELDS = ['total_tokens','payout','tokens_total_ind','tokens_acum','tokens_rondas','tokens_total_grupo','tokens_total_firma']
 SESSION_FIELDS = []
-page_sequence = ['Instrucciones','Ronda_1_fir', 'Ronda_2_fir', 'Ronda_3_fir', 'Ronda_4_fir', 'Ronda_5_fir', 'Ronda_6_fir', 'Ronda_7_fir', 'Ronda_8_fir']
 
 ROOMS = [
     dict(

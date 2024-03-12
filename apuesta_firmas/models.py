@@ -17,6 +17,8 @@ class C(BaseConstants):
     n_rounds = 8
     n_rounds_payoff = 4
     fee = 350
+    pag = ['Ronda_1_fir','Ronda_2_fir', 'Ronda_3_fir', 'Ronda_4_fir', 'Ronda_5_fir','Ronda_6_fir','Ronda_7_fir','Ronda_8_fir' ]
+    num_rondas =len(pag)
 
     LAB = {
         'LAB1': 1,
@@ -307,15 +309,18 @@ class C(BaseConstants):
 
 
 class Subsession(BaseSubsession):
-    def creating_session(subsession):
-        import random
-        if subsession.round_number == 1:
-            for p in subsession.get_players():
-                round_numbers = list(range(1, C.n_rounds + 1))
-                random.shuffle(round_numbers)
-                print(round_numbers)
-                p.participant.vars['rondas'] = round_numbers
-                print(p.participant.vars['rondas'])
+    pass
+    #def creating_session(subsession):
+        #import random
+        #for p in subsession.get_players():
+            #round_numbers = list(range(1, C.num_rondas + 1))
+            #random.shuffle(round_numbers)
+            #print(round_numbers)
+            #p.participant.vars['rondas'] = dict(zip(C.pag, round_numbers))
+            #print(p.participant.vars['rondas'])
+
+            #for i in range(1, C.num_rondas + 1):
+                #setattr(p, f'winner_{i}', '')
 
 
 
@@ -325,6 +330,13 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    def set_round_information(self):
+        round_numbers = list(range(1, C.num_rondas + 1))
+        random.shuffle(round_numbers)
+        print(round_numbers)
+        self.participant.vars['rondas'] = dict(zip(C.pag, round_numbers))
+        print(self.participant.vars['rondas'])
+
     # Introducción
 
     selected_round_1 = models.StringField(initial = "-")
@@ -344,15 +356,6 @@ class Player(BasePlayer):
     selected_round_8 = models.StringField(initial = "-")
     tokens_round_8= models.IntegerField(initial = -1)
 
-    ronda_1_ale = models.IntegerField()
-    ronda_2_ale = models.IntegerField()
-    ronda_3_ale = models.IntegerField()
-    ronda_4_ale = models.IntegerField()
-    ronda_5_ale = models.IntegerField()
-    ronda_6_ale = models.IntegerField()
-    ronda_7_ale = models.IntegerField()
-    ronda_8_ale = models.IntegerField()
-    ronda_9_ale = models.IntegerField()
 
 
     winner_1 = models.StringField()
@@ -403,18 +406,5 @@ class Player(BasePlayer):
 # tokens en plata
     pago_monetario = models.CurrencyField()
 
-    round_1_ale = models.IntegerField()
-    round_2_ale = models.IntegerField()
-    round_3_ale = models.IntegerField()
-    round_4_ale = models.IntegerField()
-    round_5_ale = models.IntegerField()
-    round_6_ale = models.IntegerField()
-    round_7_ale = models.IntegerField()
-    round_8_ale = models.IntegerField()
 
-    lab_id = models.IntegerField(initial=0)
-
-    def set_id(self):
-        participant_label = self.participant.label
-        self.lab_id = C.LAB.get(participant_label, 0)
 

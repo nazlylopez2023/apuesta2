@@ -18,7 +18,8 @@ class Results(Page):
 
 
 class Instrucciones(Page):
-    pass
+    def before_next_page(self):
+        self.player.set_round_information()
 
 
 
@@ -26,6 +27,9 @@ class Ronda_1_fir(Page):
     n_round=0
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas']['Ronda_1_fir']
     def vars_for_template(self):
 
         lst_order = ['A', 'B']
@@ -41,22 +45,21 @@ class Ronda_1_fir(Page):
             'text': C.hvs[self.n_round]['text'],
             'round': C.hvs[self.n_round]['round'],
         }
-
-    def is_displayed(self):
-        return self.round_number == self.participant.vars['rondas'][0]
+    def before_next_page(self):
+        self.player.set_round_information()
 
 class Ronda_2_fir(Page):
     n_round=1
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas']['Ronda_2_fir']
     def vars_for_template(self):
         self.player.winner_2 = 'B'
         lst_order = ['A', 'B']
         #random.shuffle(lst_order) #aleatorizar entre A y B
         #print(lst_order)
-
-
-
 
         return {
             'worker_1': C.hvs[self.n_round][lst_order[0]], #Cuando barajó traiga el primero que quedó
@@ -65,16 +68,16 @@ class Ronda_2_fir(Page):
             'round': C.hvs[self.n_round]['round'],
         }
 
-    def is_displayed(self):
-        return self.round_number == self.participant.vars['rondas'][1]
-
-
-
+    def before_next_page(self):
+        self.player.set_round_information()
 
 class Ronda_3_fir(Page):
     n_round=2
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas']['Ronda_3_fir']
     def vars_for_template(self):
         self.player.winner_3 = 'B'
         lst_order = ['A', 'B']
@@ -90,14 +93,19 @@ class Ronda_3_fir(Page):
             'round': C.hvs[self.n_round]['round'],
         }
 
-    def is_displayed(self):
-        return self.round_number == self.participant.vars['rondas'][2]
+    def before_next_page(self):
+        self.player.set_round_information()
+
+
 
 
 class Ronda_4_fir(Page):
     n_round=3
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas']['Ronda_4_fir']
     def vars_for_template(self):
         self.player.winner_4 = 'B'
         lst_order = ['A', 'B']
@@ -112,13 +120,15 @@ class Ronda_4_fir(Page):
             'round': C.hvs[self.n_round]['round'],
         }
 
-    def is_displayed(self):
-        return self.round_number == self.participant.vars['rondas'][3]
+    def before_next_page(self):
+        self.player.set_round_information()
 
 class Ronda_5_fir(Page):
     n_round=4
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas']['Ronda_5_fir']
     def vars_for_template(self):
         self.player.winner_5 = 'B'
         lst_order = ['A', 'B']
@@ -134,14 +144,16 @@ class Ronda_5_fir(Page):
 
         }
 
-    def is_displayed(self):
-        return self.round_number == self.participant.vars['rondas'][4]
-
+    def before_next_page(self):
+        self.player.set_round_information()
 
 class Ronda_6_fir(Page):
     n_round=5
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas']['Ronda_6_fir']
     def vars_for_template(self):
         self.player.winner_6 = 'B'
         lst_order = ['A', 'B']
@@ -159,14 +171,16 @@ class Ronda_6_fir(Page):
 
         }
 
-    def is_displayed(self):
-        return self.round_number == self.participant.vars['rondas'][5]
-
+    def before_next_page(self):
+        self.player.set_round_information()
 
 class Ronda_7_fir(Page):
     n_round=6
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas']['Ronda_7_fir']
     def vars_for_template(self):
         self.player.winner_7 = 'B'
         lst_order = ['A', 'B']
@@ -182,13 +196,18 @@ class Ronda_7_fir(Page):
 
         }
 
-    def is_displayed(self):
-        return self.round_number == self.participant.vars['rondas'][6]
+    def before_next_page(self):
+        self.player.set_round_information()
+
+
 
 class Ronda_8_fir(Page):
     n_round=7
     form_model = 'player'
     form_fields = ['selected_round_'+str(n_round+1), 'tokens_round_'+str(n_round+1)]
+
+    def is_displayed(self):
+        return self.round_number == self.participant.vars['rondas']['Ronda_8_fir']
     def vars_for_template(self):
         self.player.winner_8 = 'A'
         lst_order = ['A', 'B']
@@ -202,8 +221,10 @@ class Ronda_8_fir(Page):
             'text': C.hvs[self.n_round]['text'],
             'round': C.hvs[self.n_round]['round'],
         }
-    def is_displayed(self):
-        return self.round_number == self.participant.vars['rondas'][7]
+
+    def before_next_page(self):
+        self.player.set_round_information()
+
 
 ######################################################################
 class Pagos_firmas(Page):
@@ -296,13 +317,11 @@ class Pagos_firmas(Page):
     def before_next_page(self):
         self.participant.vars['tokens_total_firma'] = self.player.tokens_total
 
-rondas = [Ronda_1_fir, Ronda_2_fir, Ronda_3_fir, Ronda_4_fir, Ronda_5_fir, Ronda_6_fir, Ronda_7_fir, Ronda_8_fir]
-
-random.shuffle(rondas)
+#rondas = [Ronda_1_fir, Ronda_2_fir, Ronda_3_fir, Ronda_4_fir, Ronda_5_fir, Ronda_6_fir, Ronda_7_fir, Ronda_8_fir]
 
 
 
-page_sequence = [Instrucciones] + rondas + [Pagos_firmas]
+page_sequence = [Instrucciones, Ronda_1_fir, Ronda_2_fir, Ronda_3_fir, Ronda_4_fir, Ronda_5_fir, Ronda_6_fir, Ronda_7_fir, Ronda_8_fir, Pagos_firmas]
 
 
 
