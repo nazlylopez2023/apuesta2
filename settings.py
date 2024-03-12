@@ -3,7 +3,7 @@ from os import environ
 SESSION_CONFIGS = [
     dict(
         name = 'Apuesta_ind',
-        app_sequence = ['bienvenida','encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'],   #'encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'
+        app_sequence = ['apuesta_firmas','pagina_final'],   #'encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final'
         num_demo_participants = 3,
         display_name = 'Apuesta individual'
     ),
@@ -39,8 +39,16 @@ SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
 )
 
-PARTICIPANT_FIELDS = ['bienvenida','encription','apuesta_ind','apuesta_grupo','apuesta_firmas','pagina_final']
+PARTICIPANT_FIELDS = ['tokens_total_ind','tokens_total_grupo','tokens_total_firma']
 SESSION_FIELDS = []
+
+ROOMS = [
+    dict(
+        name='econ101',
+        display_name='Econ 101 class',
+        participant_label_file='_rooms/econ101.txt'
+    ),
+]
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
